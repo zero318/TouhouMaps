@@ -1,0 +1,106 @@
+!msgmap
+
+# mappings from zero318
+
+!ins_names
+0 msg_delete
+1 portrait_anm_script
+2 portrait_anm_sprite
+3 text_dialogue
+4 wait
+5 anm_interrupt
+6 ecl_resume
+7 music
+8 text_intro
+9 stage_results
+10 msg_halt
+11 stage_end
+12 music_fade_out
+13 msg_flag_wait_skippable
+14 __screen_fade
+15 portrait_configure_all
+16 text_speaker_dialogue
+17 portrait_configure
+18 msg_flag_textbox_visible
+#19 nop19
+#20 nop20
+#21 nop21
+#22 nop22
+23 __unknown_player_A
+24 __unknown_timer_set_1_A
+25 __unknown_gui_anm_A
+26 text_speaker_color
+#27 nop27
+28 std_interrupt
+
+!ins_signatures
+0
+1 s(enum="PortraitIndex")--
+2 s(enum="PortraitIndex")s(enum="AnmSprite")
+3 s(enum="TextColor")s(enum="TextLine")z(bs=4;mask=0x77,7,16)
+4 S
+5 s(enum="InterruptTarget")b-
+6
+7 S(enum="MusicIndex")
+8
+9 S
+10
+11
+12
+13 b(enum="bool")---
+14
+15 S(enum="PortraitFocusIndex")nn
+16 z(bs=4;mask=0x77,7,16)
+17 S(enum="PortraitIndex")n
+18 b(enum="bool")---
+23 S(enum="ScreenSide")
+24
+25
+26 b(enum="TextColor")
+28 S
+
+!enum(name="PortraitIndex")
+0 Portrait0
+1 Portrait1
+## The game engine specifically checks for these values, so it's not just out-of-bounds array shenanigans.
+## These don't seem to go through player side lookup?
+2 Portrait2
+3 Portrait3
+
+!enum(name="PortraitFocusIndex")
+-1 None
+0 Portrait0
+1 Portrait1
+2 Portrait2
+3 Portrait3
+
+!enum(name="TextLine")
+0 TopLine
+1 BottomLine
+
+!enum(name="TextColor")
+0 PaleBlue
+1 PalePurple
+2 LightPurple
+3 LightCyan
+
+!enum(name="InterruptTarget")
+0 Portrait0
+1 Portrait1
+2 Portrait2
+3 Portrait3
+## The specific check for these values has been removed with IN,
+## but out-of-bounds indexing would still function and I've included
+## them for the sake of compatibility.
+4 TextLines
+
+!enum(name="MusicIndex")
+-1 Disable
+## No idea if there are additional values that do anything.
+## MIDI related data is still in the code?
+0 Music0
+
+!enum(name="ScreenSide")
+0 LeftSide
+1 RightSide
+2 SystemSide

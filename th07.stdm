@@ -1,0 +1,85 @@
+!stdmap
+
+# mappings from zero318
+
+!ins_names
+0 camera_position_key
+1 fog
+2 fog_interp
+3 std_halt
+4 jump
+5 camera_position
+6 camera_position_interp
+7 camera_facing
+8 camera_facing_interp
+9 camera_rotation
+10 camera_rotation_interp
+11 camera_fov
+12 camera_fov_interp
+13 background_fill_color
+14 camera_position_interp_initial
+15 camera_position_interp_final
+16 camera_position_interp_initial_derivative
+17 camera_position_interp_final_derivative
+18 camera_position_interp_bezier
+19 camera_facing_interp_initial
+20 camera_facing_interp_final
+21 camera_facing_interp_initial_derivative
+22 camera_facing_interp_final_derivative
+23 camera_facing_interp_bezier
+24 camera_rotation_interp_initial
+25 camera_rotation_interp_final
+26 camera_rotation_interp_initial_derivative
+27 camera_rotation_interp_final_derivative
+28 camera_rotation_interp_bezier
+29 __background_script_A
+30 __background_script_B
+31 interrupt_label
+
+!ins_signatures
+0 fff
+1 Cff
+2 S__
+3 ___
+4 ot_
+5 fff
+6 SS(enum="InterpMode")_
+7 fff
+8 SS(enum="InterpMode")_
+9 fff
+10 SS(enum="InterpMode")_
+11 f__
+12 SS(enum="InterpMode")_
+13 C__
+14 fff
+15 fff
+16 fff
+17 fff
+18 S__
+19 fff
+20 fff
+21 fff
+22 fff
+23 S__
+24 fff
+25 fff
+26 fff
+27 fff
+28 S__
+29 N__
+30 N__
+31 S__
+
+!ins_intrinsics
+4 Jmp()
+31 Interrupt()
+
+!enum(name="InterpMode")
+0 Linear
+1 DecelerateSlow
+2 Decelerate
+3 DecelerateFast
+4 AccelerateSlow
+5 Accelerate
+6 AccelerateFast
+7 Bezier

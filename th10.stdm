@@ -1,0 +1,74 @@
+!stdmap
+
+# mappings from zero318
+
+!ins_names
+0 std_halt
+1 jump
+2 camera_position
+3 camera_position_interp
+4 camera_facing
+5 camera_facing_interp
+6 camera_rotation
+7 camera_fov
+8 fog
+9 fog_interp
+10 camera_position_interp_bezier
+11 camera_facing_interp_bezier
+12 __shaking_mode
+13 background_fill_color
+14 __background_sprite
+
+!ins_signatures
+0
+1 ot
+2 fff
+3 SU(enum="InterpMode")fff
+4 fff
+5 SU(enum="InterpMode")fff
+6 fff
+7 f
+8 Cff
+9 SU(enum="InterpMode")Cff
+10 S_fffffffff
+11 S_fffffffff
+12 b(enum="ShakingMode")---
+13 C
+14 S(enum="BackgroundSlot")N
+
+!ins_intrinsics
+1 Jmp()
+
+!enum(name="InterpMode")
+0 Linear
+1 AccelerateSlow
+2 Accelerate
+3 AccelerateFast
+4 DecelerateSlow
+5 Decelerate
+6 DecelerateFast
+7 ConstantVelocity
+8 Bezier
+9 AccelDecelSlow
+10 AccelDecel
+11 AccelDecelFast
+12 DecelAccelSlow
+13 DecelAccel
+14 DecelAccelFast
+15 Initial
+16 Final
+17 ConstantAccel
+
+!enum(name="ShakingMode")
+0 Disable
+1 ShakingMode1
+
+!enum(name="BackgroundSlot")
+0 BackgroundSlot0
+1 BackgroundSlot1
+2 BackgroundSlot2
+3 BackgroundSlot3
+4 BackgroundSlot4
+5 BackgroundSlot5
+6 BackgroundSlot6
+7 BackgroundSlot7

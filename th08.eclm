@@ -1,0 +1,1378 @@
+!eclmap
+
+# mappings from zero318
+
+!ins_names
+0 nop
+1 enemy_delete
+2 wait
+3 debug_watch
+4 jump
+5 _loop
+6 set_int
+7 set_float
+8 set_int_rand_sign
+9 set_float_rand_sign
+10 math_int_add_assign
+11 math_int_sub_assign
+12 math_int_mul_assign
+13 math_int_div_assign
+14 math_int_mod_assign
+15 math_float_add_assign
+16 math_float_sub_assign
+17 math_float_mul_assign
+18 math_float_div_assign
+19 math_float_mod_assign
+20 math_int_add
+21 math_int_sub
+22 math_int_mul
+23 math_int_div
+24 math_int_mod
+25 math_float_add
+26 math_float_sub
+27 math_float_mul
+28 math_float_div
+29 math_float_mod
+30 math_inc
+31 math_dec
+32 math_sin
+33 math_cos
+34 math_line_angle
+35 math_float_lerp
+36 math_float_interp
+37 math_reduce_angle
+38 math_circle_pos_fast
+39 math_distance
+40 jump_int_equ
+41 jump_float_equ
+42 jump_int_neq
+43 jump_float_neq
+44 jump_int_lss
+45 jump_float_lss
+46 jump_int_leq
+47 jump_float_leq
+48 jump_int_gre
+49 jump_float_gre
+50 jump_int_geq
+51 jump_float_geq
+52 call
+53 ret
+54 anm_set_main
+55 anm_set_poses_ex
+56 anm_set_poses
+57 anm_set_slot
+58 anm_set_boss_main
+59 anm_set_boss_poses_ex
+60 anm_set_boss_poses
+61 anm_set_boss_slot
+62 anm_play_attack
+63 move_position
+64 move_position_interp
+65 move_velocity
+66 move_velocity_interp
+67 move_rand_interp
+68 move_towards_player
+69 move_towards_player_interp
+70 move_angular_velocity
+71 move_acceleration
+72 move_orbit_abs
+73 move_orbit_rel
+74 move_as_orbit_ex
+75 move_bounds_set
+76 move_bounds_disable
+77 enemy_set_hitbox
+78 enemy_set_low_damage_hitbox
+79 enemy_flags_load
+80 enemy_flags_set
+81 enemy_flags_clear
+82 player_protect_range
+83 trail_familiar
+#84 nop_84
+#85 nop_85
+86 set_int_from_boss
+87 set_float_from_boss
+88 boss_call
+89 boss_interrupt
+90 familiar_create_abs
+91 familiar_create_rel
+92 familiar_create_rel_follow
+93 enemy_create_abs
+94 enemy_create_rel
+95 enemy_kill_all
+96 bullet_fan_aimed
+97 bullet_fan
+98 bullet_circle_aimed
+99 bullet_circle
+100 bullet_offset_circle_aimed
+101 bullet_offset_circle
+102 bullet_random_angle
+103 bullet_random_speed
+104 bullet_random
+105 shoot_interval
+106 shoot_interval_delayed
+107 shoot_disable
+108 shoot_enable
+109 shoot_now
+110 shoot_offset
+111 bullet_effects
+112 bullet_cancel
+113 bullet_sound
+114 laser_create
+115 laser_create_aimed
+116 laser_index
+117 laser_rotate
+118 laser_rotate_from_player
+119 laser_offset
+120 laser_test
+121 laser_cancel
+122 spellcard_start
+123 spellcard_end
+124 effect_sound
+125 enemy_interrupt
+126 enemy_interrupt_set
+127 boss_set
+128 spellcard_effect
+129 enemy_flags_death
+130 death_callback_sub
+131 enemy_life_set
+132 boss_timer_set
+133 life_callback_ex
+134 timer_callback_ex
+135 async_call
+136 ex_ins_call
+137 ex_ins_repeat
+138 anm_death_effects
+139 effect_particle
+140 effect_create
+141 drop_item_id
+142 drop_items
+143 item_reward_set
+144 item_bonuses_set
+145 anm_flag_rotation
+146 ecl_time_add
+147 std_interrupt
+148 boss_set_life_count
+149 anm_interrupt_main
+150 anm_interrupt_slot
+151 enemy_flag_disable_call_stack
+152 bullet_rank_influence
+153 boss_phase_advance
+154 laser_clear_all
+155 spellcard_flag_timeout
+156 enemy_flag_grazeable
+157 trail_set
+158 enemy_lifebar_color
+159 anm_layer
+160 enemy_invincible_timer
+161 bullet_cancel_radius
+162 bullet_clear
+163 __enemy_manager_unknown
+164 spellcard_effect_position
+165 anm_rotate
+166 math_circle_pos
+167 laser_angle
+168 drop_point_items
+169 __set_float_rand_angle_to_bottom
+170 laser_flag_force_visible
+171 laser_end_length
+172 laser_start_length
+173 __enemy_flag_bomb_related_A
+174 familiar_anm_effect
+175 timeline_flag_spawn_prevent
+176 player_nullify
+177 __enemy_set_previous_life
+178 move_rand_interp_2
+179 night_time_show
+180 night_time_hide
+181 night_time_advance
+182 anm_flag_follow_main
+183 __enemy_flag_bomb_related_B
+184 __spellcard_flag_unknown
+# ZECL
+185 debug_breakpoint
+186 thcrap_expr
+187 set_int_pun
+188 set_float_pun
+189 math_bit_and
+190 math_bit_or
+191 math_bit_xor
+192 math_bit_neg
+193 math_shl
+194 math_shr
+195 math_sar
+196 math_rol
+197 math_ror
+198 math_udiv
+199 math_umod
+200 math_int_neg
+201 math_float_neg
+202 set_int_indirect
+203 set_float_indirect
+204 math_bit_and_assign
+205 math_bit_or_assign
+206 math_bit_xor_assign
+207 math_bit_neg_assign
+208 math_shl_assign
+209 math_shr_assign
+210 math_sar_assign
+211 math_rol_assign
+212 math_ror_assign
+213 math_udiv_assign
+214 math_umod_assign
+215 math_int_neg_assign
+216 math_float_neg_assign
+217 inline_switch
+
+!ins_signatures
+0
+1
+2 S
+3 S
+4 to
+5 toS
+6 SS
+7 ff
+8 SS
+9 ff
+10 SS
+11 SS
+12 SS
+13 SS
+14 SS
+15 ff
+16 ff
+17 ff
+18 ff
+19 ff
+20 SSS
+21 SSS
+22 SSS
+23 SSS
+24 SSS
+25 fff
+26 fff
+27 fff
+28 fff
+29 fff
+30 S
+31 S
+32 ff
+33 ff
+34 fffff
+35 ffff
+36 fSS(enum="InterpType")S(enum="InterpMode")ffff
+37 f
+38 ffff
+39 fffff
+40 SSto
+41 ffto
+42 SSto
+43 ffto
+44 SSto
+45 ffto
+46 SSto
+47 ffto
+48 SSto
+49 ffto
+50 SSto
+51 ffto
+52 E(imm)
+53
+54 N
+55 N
+56 NNNNNN
+57 S(enum="AnmSlotIndex")N
+58 N
+59 N
+60 NNNNNN
+61 S(enum="AnmSlotIndex")N
+62
+63 ff
+64 SS(enum="InterpMode")ff
+65 ff
+66 SS(enum="InterpMode")ff
+67 SS(enum="InterpMode")f
+68 ff
+69 SS(enum="InterpMode")ff
+70 f
+71 f
+72 Sffffff
+73 Sfff
+74 Sff
+75 ffff
+76
+77 ff
+78 ff
+79 U(hex;enum="EnemyFlagsExact")
+80 U(hex;enum="EnemyFlagsSet")
+81 U(hex;enum="EnemyFlagsClear")
+82 f
+83 U(enum="bool") ## U(enum="BitBool")
+86 SSS(enum="BossIndex")
+87 ffS(enum="BossIndex")
+88 S(enum="BossIndex")E(imm)
+89 S(enum="BossIndex")S(enum="InterruptIndex")
+90 E(imm)ffSS(enum="ItemID")S
+91 E(imm)ffSS(enum="ItemID")S
+92 E(imm)ffSS(enum="ItemID")S
+93 E(imm)fffSS(enum="ItemID")S
+94 E(imm)fffSS(enum="ItemID")S
+95
+96 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+97 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+98 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+99 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+100 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+101 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+102 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+103 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+104 s(enum="BulletSprite")s(enum="BulletColor")SSffffU(imm;hex;enum="BulletFlags")
+105 S
+106 S
+107
+108
+109
+110 ff
+111 S(enum="BulletEffectIndex")U(hex;enum="BulletEffectID")U(enum="bool")SSff
+112
+113 S(enum="BulletSoundID")S(enum="BulletSoundID")
+114 s(imm;enum="LaserSprite")s(enum="BulletColor")ffffffSSSS(imm)S(imm)U(imm;hex;enum="LaserFlags")
+115 s(imm;enum="LaserSprite")s(enum="BulletColor")ffffffSSSS(imm)S(imm)U(imm;hex;enum="LaserFlags")
+116 S(enum="LaserIndex")
+117 S(enum="LaserIndex")f
+118 S(enum="LaserIndex")f
+119 S(enum="LaserIndex")fff
+120 S(enum="LaserIndex")
+121 S(enum="LaserIndex")
+122 s(imm;enum="SpellPortrait")u(imm)S(imm)z(len=48;mask=0xaa,0,0)z(len=48;mask=0xbb,0,0)z(len=64;nulless;mask=0xdd,0,0)z(len=64;nulless;mask=0xee,0,0)
+123
+124 S(enum="SoundID")
+125 S(enum="InterruptIndex")
+126 ES(enum="InterruptIndex")
+127 S(enum="BossIndex")
+128 S(imm;enum="SpellColor")f(imm)f(imm)f(imm)f(imm)
+129 b(imm;enum="EnemyDeathFlags")---
+130 s(imm;extend;enum="EclSub")--
+131 S
+132 S
+133 S(enum="LifeSlotIndex")SE
+134 SE
+135 S(enum="AsyncIndex")E
+136 S(enum="ExIns")S(imm) ## S(enum="ExIns")v
+137 S(enum="ExIns")S(imm) ## S(enum="ExIns")v
+138 c(imm;enum="EffectID")b(imm;enum="EffectID2")b(imm)-
+139 S(enum="EffectID")UC
+140 S(enum="EffectID")UCfff
+141 S(enum="ItemID")
+142 S
+143 S(enum="ItemID")
+144 SS
+145 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+146 S
+147 S
+148 S
+149 S
+150 S(imm;enum="AnmSlotIndex")s(imm)--
+151 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+152 ffSSSS
+153
+154
+155 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+156 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+157 b(imm;hex;enum="TrailFlags")---SSS
+158 S(enum="LifeBarIndex")SSC
+159 U(enum="AnmLayerIndex")
+160 S
+161 f
+162
+163 S
+164 U(enum="bool")fff ## U(enum="BitBool")fff
+165 f
+166 ffff
+167 S(enum="LaserIndex")f
+168 S
+169 f
+170 S(enum="LaserIndex")U(enum="bool")
+171 S(enum="LaserIndex")f
+172 S(enum="LaserIndex")ff
+173 U(enum="bool") ## U(enum="BitBool")
+174 S(enum="EffectID")
+175 S(enum="bool")
+176 b(imm;enum="bool")---
+177 S
+178 SSf
+179
+180
+181
+182 U(enum="bool") ## U(enum="BitBool")
+183 U(enum="bool") ## U(enum="BitBool")
+184 U(enum="bool") ## U(enum="BitBool")
+# ZECL
+185
+186 Sz(bs=4)
+187 Sf
+188 fS
+189 SSS
+190 SSS
+191 SSS
+192 SS
+193 SSS
+194 SSS
+195 SSS
+196 SSS
+197 SSS
+198 UUU
+199 UUU
+200 SS
+201 ff
+202 SS
+203 ff
+204 SS
+205 SS
+206 SS
+207 S
+208 SS
+209 SS
+210 SS
+211 SS
+212 SS
+213 UU
+214 UU
+215 S
+216 f
+217 SU(imm)to
+
+!timeline_ins_names
+0 enemy_create
+1 enemy_create_mirror
+2 enemy_create_random_x_range
+3 enemy_create_random_x
+4 enemy_create_random_x_range_mirror
+5 enemy_create_random_x_mirror
+6 msg_read
+7 msg_wait
+8 boss_interrupt
+9 player_power
+10 boss_wait
+11 enemy_create_drops
+12 enemy_create_drops_mirror
+13 timeline_halt
+14 timeline_resume
+15 enemy_create_force
+16 show_retry_menu
+# ZECL
+17 jump
+
+!timeline_ins_signatures
+0 EffSS(enum="ItemID")S
+1 EffSS(enum="ItemID")S
+2 EfffSS(enum="ItemID")S
+3 EfSS(enum="ItemID")S
+4 EfffSS(enum="ItemID")S
+5 EfSS(enum="ItemID")S
+6 S(enum="MsgScript")
+7
+8 S(enum="BossIndex")s(enum="InterruptIndex")--
+9 S
+10 S(enum="BossIndex")
+11 EffSSSS
+12 EffSSSS
+13 S(enum="TimelineIndex")
+14 S(enum="TimelineIndex")
+15 EffSS(enum="ItemID")S
+16
+# ZECL
+17 to
+
+!gvar_names
+10000 I0
+10001 I1
+10002 I2
+10003 I3
+10004 I4
+10005 I5
+10006 I6
+10007 I7
+10008 EI0
+10009 EI1
+10010 EI2
+10011 EI3
+10012 EI4
+10013 EI5
+10014 EI6
+10015 EI7
+10016 F0
+10017 F1
+10018 F2
+10019 F3
+10020 F4
+10021 F5
+10022 F6
+10023 F7
+10024 EF0
+10025 EF1
+10026 EF2
+10027 EF3
+10028 EF4
+10029 EF5
+10030 EF6
+10031 EF7
+10032 RAND_INT
+10033 RAND_FLOAT
+10034 RAND_INT_SIGNED
+10035 RAND_FLOAT_SIGNED
+10036 IC0
+10037 IC1
+10038 IC2
+10039 IC3
+10040 DIFFICULTY
+10041 RANK
+10042 SELF_X
+10043 SELF_Y
+10044 SELF_Z
+10045 PLAYER_X
+10046 PLAYER_Y
+10047 PLAYER_Z
+10048 PLAYER_ANGLE
+10049 SELF_TIME
+10050 PLAYER_DISTANCE
+10051 SELF_LIFE
+10052 PLAYER_SHOT
+10053 PARAM_A
+10054 PARAM_B
+10055 PARAM_C
+10056 PARAM_D
+10057 PARAM_R
+10058 PARAM_S
+10059 PARAM_M
+10060 PARAM_N
+10061 ARG_A
+10062 ARG_B
+10063 ARG_C
+10064 ARG_D
+10065 ARG_R
+10066 ARG_S
+10067 ARG_M
+10068 ARG_N
+10069 SELF_ANGLE
+10070 SELF_ANGLE_VEL
+10071 SELF_SPEED
+10072 SELF_ACCEL
+10073 SELF_ORBIT_RADIUS
+10074 ORIGIN_X
+10075 ORIGIN_Y
+10076 ORIGIN_Z
+10077 SELF_ORBIT
+10078 SELF_ORBIT_VEL
+10079 TARGET_X
+10080 TARGET_Y
+10081 TARGET_Z
+10082 RAND_ANGLE
+10083 LAST_FRAME_DAMAGE
+10084 BOSS_ID
+10085 LAST_FRAME_X_DELTA
+10086 LAST_FRAME_Y_DELTA
+10087 LAST_FRAME_Z_DELTA
+10088 LIFE_THRES_1
+10089 LIFE_THRES_2
+10090 LIFE_THRES_3
+10091 LIFE_THRES_4
+10092 ITEM_REWARD
+10093 SCORE_REWARD
+10094 F8
+10095 F9
+10096 FAMILIAR_COUNT
+10097 PLAYER_IS_YOUKAI
+10098 TIME_THRESHOLD_MET
+10099 SPELLCARD_CAPTURE
+10100 BOSS_TIMER
+# ZECL
+10101 COMPARE
+
+!gvar_types
+10000 $
+10001 $
+10002 $
+10003 $
+10004 $
+10005 $
+10006 $
+10007 $
+10008 $
+10009 $
+10010 $
+10011 $
+10012 $
+10013 $
+10014 $
+10015 $
+10016 %
+10017 %
+10018 %
+10019 %
+10020 %
+10021 %
+10022 %
+10023 %
+10024 %
+10025 %
+10026 %
+10027 %
+10028 %
+10029 %
+10030 %
+10031 %
+10032 $
+10033 %
+10034 $
+10035 %
+10036 $
+10037 $
+10038 $
+10039 $
+10040 $
+10041 $
+10042 %
+10043 %
+10044 %
+10045 %
+10046 %
+10047 %
+10048 %
+10049 $
+10050 %
+10051 $
+10052 $
+10053 $
+10054 $
+10055 $
+10056 $
+10057 %
+10058 %
+10059 %
+10060 %
+10061 $
+10062 $
+10063 $
+10064 $
+10065 %
+10066 %
+10067 %
+10068 %
+10069 %
+10070 %
+10071 %
+10072 %
+10073 %
+10074 %
+10075 %
+10076 %
+10077 %
+10078 %
+10079 %
+10080 %
+10081 %
+10082 %
+10083 $
+10084 $
+10085 %
+10086 %
+10087 %
+10088 $
+10089 $
+10090 $
+10091 $
+10092 $
+10093 $
+10094 %
+10095 %
+10096 $
+10097 $
+10098 $
+10099 $
+10100 $
+# ZECL
+10101 $
+
+!ins_intrinsics
+4 Jmp()
+5 CountJmp(op=">")
+6 AssignOp(op="=";type="int")
+7 AssignOp(op="=";type="float")
+10 AssignOp(op="+=";type="int")
+11 AssignOp(op="-=";type="int")
+12 AssignOp(op="*=";type="int")
+13 AssignOp(op="/=";type="int")
+14 AssignOp(op="%=";type="int")
+15 AssignOp(op="+=";type="float")
+16 AssignOp(op="-=";type="float")
+17 AssignOp(op="*=";type="float")
+18 AssignOp(op="/=";type="float")
+19 AssignOp(op="%=";type="float")
+20 BinOp(op="+";type="int")
+21 BinOp(op="-";type="int")
+22 BinOp(op="*";type="int")
+23 BinOp(op="/";type="int")
+24 BinOp(op="%";type="int")
+25 BinOp(op="+";type="float")
+26 BinOp(op="-";type="float")
+27 BinOp(op="*";type="float")
+28 BinOp(op="/";type="float")
+29 BinOp(op="%";type="float")
+#30 UnOp(op="++";type="int")
+#31 UnOp(op="--";type="int")
+32 UnOp(op="sin";type="float")
+33 UnOp(op="cos";type="float")
+40 CondJmp(op="==";type="int")
+41 CondJmp(op="==";type="float")
+42 CondJmp(op="!=";type="int")
+43 CondJmp(op="!=";type="float")
+44 CondJmp(op="<";type="int")
+45 CondJmp(op="<";type="float")
+46 CondJmp(op="<=";type="int")
+47 CondJmp(op="<=";type="float")
+48 CondJmp(op=">";type="int")
+49 CondJmp(op=">";type="float")
+50 CondJmp(op=">=";type="int")
+51 CondJmp(op=">=";type="float")
+52 CallReg()
+#53 Return()
+# ZECL
+189 BinOp(op="&";type="int")
+190 BinOp(op="|";type="int")
+191 BinOp(op="^";type="int")
+192 UnOp(op="~";type="int")
+193 BinOp(op="<<";type="int")
+194 BinOp(op=">>";type="int")
+195 BinOp(op=">>>";type="int")
+#196 BinOp(op="r<<";type="int")
+#197 BinOp(op="r>>";type="int")
+#198 BinOp(op="u/";type="int")
+#199 BinOp(op="u%";type="int")
+200 UnOp(op="-";type="int")
+201 UnOp(op="-";type="float")
+204 AssignOp(op="&=";type="int")
+205 AssignOp(op="|=";type="int")
+206 AssignOp(op="^=";type="int")
+208 AssignOp(op="<<=";type="int")
+209 AssignOp(op=">>=";type="int")
+210 AssignOp(op=">>>=";type="int")
+#211 AssignOp(op="r<<=";type="int")
+#212 AssignOp(op="r>>=";type="int")
+#213 AssignOp(op="u/=";type="int")
+#214 AssignOp(op="u%=";type="iny")
+
+# 0,0,1,0,1,0,0,0,1,1,0,0,1,1,1,0,1,0,1,0,1,0,1,0,1,0,0,1,1,1,0,0
+!enum(name="ItemID")
+-2 NoItem
+-1 RandomItem
+0 PowerItem
+1 PointItem
+2 BigPowerItem
+3 BombItem
+4 FItem
+5 LifeItem
+6 StarItem
+7 TimeItem
+8 SmallPointItem
+9 TimeStarItem
+10 TimeItem2
+
+!enum(name="BulletSprite")
+# 16 colors
+0 Pellet
+1 RingBall
+2 Rice
+3 Ball
+4 Kunai
+5 Shard
+6 Arrowhead
+11 Talisman
+12 Star
+13 Star2
+16 Bullet
+17 InvertRice
+# 8 colors
+7 BigBall
+8 Butterfly
+9 Sword
+14 BigStar
+15 BigStar2
+18 Oval
+20 Dagger
+# 4 colors
+10 Bubble
+19 Fireball
+
+!enum(name="BulletColor")
+#0 Red4
+#1 Blue4
+#2 Green4
+#3 Yellow4
+#0 Gray8
+#1 Red8
+#2 Purple8
+#3 Blue8
+#4 Cyan8
+#5 Green8
+#6 Yellow8
+#7 White8
+0 Gray
+1 DarkRed
+2 Red
+3 DarkPurple
+4 Purple
+5 DarkBlue
+6 Blue
+7 DarkCyan
+8 Cyan
+9 DarkGreen
+10 Green
+11 Lime
+12 DarkYellow
+13 Yellow
+14 Orange
+15 White
+
+!enum(name="BulletFlags")
+
+!enum(name="LaserSprite")
+# 16 colors
+0 LineLaser
+1 BeamLaser
+2 LineLaserNoBlend
+3 BeamLaserNoBlend
+4 ArrowheadLaser
+
+!enum(name="LaserFlags")
+0 StretchInOut
+1 FadeInOut
+2 StretchInOut_UnusedTrue
+3 FadeInOut_UnusedTrue
+4 StretchInOut_Force
+5 FadeInOut_Force
+6 StretchInOut_UnusedTrue_Force
+7 FadeInOut_UnusedTrue_Force
+
+!enum(name="BulletEffectID")
+1 Decelerate # 0x0000001
+16 AccelerateTowards # 0x0000010 
+32 Accelerate # 0x0000020
+64 AimRel # 0x0000040
+128 AimPlayer # 0x0000080
+256 AimAbs # 0x0000100
+1024 BounceAll # 0x0000400
+2048 BounceNonBottom # 0x0000800
+8192 OffscreenImmune # 0x0002000
+16384 SetSprite # 0x0004000
+131072 Delay # 0x0020000
+262144 Cancel # 0x0040000
+524288 PlaySound # 0x0080000
+4194304 WrapHorizontal # 0x0400000
+8388608 WrapVertical # 0x0800000
+16777216 Shoot # 0x1000000
+
+!enum(name="InterpType")
+0 Default
+1 Default2
+2 Default3
+3 Default4
+4 Default5
+5 Default6
+6 Default7
+7 Bezier
+
+!enum(name="InterpMode")
+0 Linear
+1 AccelerateSlow
+2 Accelerate
+3 AccelerateFast
+4 DecelerateSlow
+5 Decelerate
+6 DecelerateFast
+
+!enum(name="EnemyDeathFlags")
+0 DespawnNoCallback
+1 DisableInteraction
+2 DropItemsOnly
+3 SetHPTo1
+4 Nothing
+
+!enum(name="EnemyFlagsExact")
+
+!enum(name="EnemyFlagsSet")
+
+!enum(name="EnemyFlagsClear")
+
+!enum(name="TrailFlags")
+0 DisableTrail
+1 TrailFlag1
+2 TrailFlag2
+4 TrailFlag3
+8 TrailFlag4
+16 TrailFlag5
+
+# Haven't gotten around to checking portraits yet
+!enum(name="SpellPortrait")
+-1 NoPortrait
+
+!enum(name="BossIndex")
+-1 UnsetBoss
+0 Boss0
+1 Boss1
+2 Boss2
+3 Boss3
+4 MiniBoss0
+5 MiniBoss1
+6 MiniBoss2
+7 MiniBoss3
+
+!enum(name="LaserIndex")
+0 Laser0
+1 Laser1
+2 Laser2
+3 Laser3
+4 Laser4
+5 Laser5
+6 Laser6
+7 Laser7
+8 Laser8
+9 Laser9
+10 Laser10
+11 Laser11
+12 Laser12
+13 Laser13
+14 Laser14
+15 Laser15
+16 Laser16
+17 Laser17
+18 Laser18
+19 Laser19
+20 Laser20
+21 Laser21
+22 Laser22
+23 Laser23
+24 Laser24
+25 Laser25
+26 Laser26
+27 Laser27
+28 Laser28
+29 Laser29
+30 Laser30
+31 Laser31
+
+!enum(name="InterruptIndex")
+-1 UnsetInterrupt
+0 Interrupt0
+1 Interrupt1
+2 Interrupt2
+3 Interrupt3
+4 Interrupt4
+5 Interrupt5
+6 Interrupt6
+7 Interrupt7
+8 Interrupt8
+9 Interrupt9
+10 Interrupt10
+11 Interrupt11
+12 Interrupt12
+13 Interrupt13
+14 Interrupt14
+15 Interrupt15
+16 Interrupt16
+17 Interrupt17
+18 Interrupt18
+19 Interrupt19
+20 Interrupt20
+21 Interrupt21
+22 Interrupt22
+23 Interrupt23
+24 Interrupt24
+25 Interrupt25
+26 Interrupt26
+27 Interrupt27
+28 Interrupt28
+29 Interrupt29
+30 Interrupt30
+31 Interrupt31
+
+!enum(name="AnmSlotIndex")
+-1 AnmMain
+0 AnmSlot0
+1 AnmSlot1
+
+!enum(name="AnmLayerIndex")
+0 Layer0 # Default
+1 Layer1
+2 Layer2 # Phased out familiars
+3 Layer3
+
+!enum(name="LifeSlotIndex")
+0 LifeSlot1
+1 LifeSlot2
+2 LifeSlot3
+3 LifeSlot4
+
+!enum(name="LifeBarIndex")
+0 LifeBar1
+1 LifeBar2
+2 LifeBar3
+3 LifeBar4
+4 LifeBar5
+6 LifeBar6
+7 LifeBar7
+
+!enum(name="BulletEffectIndex")
+0 BulletEffect0
+1 BulletEffect1
+2 BulletEffect2
+3 BulletEffect3
+4 BulletEffect4
+5 BulletEffect5
+6 BulletEffect6
+7 BulletEffect7
+8 BulletEffect8
+9 BulletEffect9
+10 BulletEffect10
+11 BulletEffect11
+12 BulletEffect12
+13 BulletEffect13
+14 BulletEffect14
+15 BulletEffect15
+16 BulletEffect16
+17 BulletEffect17
+
+!enum(name="AsyncIndex")
+0 Async0
+1 Async1
+2 Async2
+3 Async3
+
+!enum(name="EffectID")
+0 Effect0
+1 Effect1
+2 Effect2
+3 Effect3
+4 Effect4
+5 Effect5
+6 Effect6
+7 Effect7
+8 Effect8
+9 Effect9
+10 Effect10
+11 Effect11
+12 Effect12
+13 Effect13
+14 Effect14
+15 Effect15
+16 Effect16
+17 Effect17
+18 Effect18
+19 Effect19
+20 Effect20
+21 Effect21
+22 Effect22
+23 Effect23
+24 Effect24
+25 Effect25
+26 Effect26
+27 Effect27
+28 Effect28
+29 Effect29
+30 Effect30
+31 Effect31
+32 Effect32
+33 Effect33
+34 Effect34
+35 Effect35
+36 Effect36
+37 Effect37
+38 Effect38
+39 Effect39
+40 Effect40
+41 Effect41
+42 Effect42
+43 Effect43
+44 Effect44
+45 Effect45
+46 Effect46
+47 Effect47
+48 Effect48
+49 Effect49
+50 Effect50
+51 Effect51
+52 Effect52
+53 Effect53
+54 Effect54
+55 Effect55
+56 Effect56
+57 Effect57
+58 Effect58
+59 Effect59
+60 Effect60
+61 Effect61
+62 Effect62
+63 Effect63
+64 Effect64
+65 Effect65
+
+!enum(name="EffectID2")
+0 Effect4
+1 Effect5
+2 Effect6
+3 Effect7
+4 Effect8
+5 Effect9
+6 Effect10
+7 Effect11
+8 Effect12
+9 Effect13
+10 Effect14
+11 Effect15
+12 Effect16
+13 Effect17
+14 Effect18
+15 Effect19
+16 Effect20
+17 Effect21
+18 Effect22
+19 Effect23
+20 Effect24
+21 Effect25
+22 Effect26
+23 Effect27
+24 Effect28
+25 Effect29
+26 Effect30
+27 Effect31
+28 Effect32
+29 Effect33
+30 Effect34
+31 Effect35
+32 Effect36
+33 Effect37
+34 Effect38
+35 Effect39
+36 Effect40
+37 Effect41
+38 Effect42
+39 Effect43
+40 Effect44
+41 Effect45
+42 Effect46
+43 Effect47
+44 Effect48
+45 Effect49
+46 Effect50
+47 Effect51
+48 Effect52
+49 Effect53
+50 Effect54
+51 Effect55
+52 Effect56
+53 Effect57
+54 Effect58
+55 Effect59
+56 Effect60
+57 Effect61
+58 Effect62
+59 Effect63
+60 Effect64
+61 Effect65
+
+# No longer used in IN
+!enum(name="SpellColor")
+
+!enum(name="SoundID")
+0 Sound0
+1 Sound1
+2 Sound2
+3 Sound3
+4 Sound4
+5 Sound5
+6 Sound6
+7 Sound7
+8 Sound8
+9 Sound9
+10 Sound10
+11 Sound11
+12 Sound12
+13 Sound13
+14 Sound14
+15 Sound15
+16 Sound16
+17 Sound17
+18 Sound18
+19 Sound19
+20 Sound20
+21 Sound21
+22 Sound22
+23 Sound23
+24 Sound24
+25 Sound25
+26 Sound26
+27 Sound27
+28 Sound28
+29 Sound29
+30 Sound30
+31 Sound31
+32 Sound32
+33 Sound33
+34 Sound34
+35 Sound35
+36 Sound36
+37 Sound37
+38 Sound38
+39 Sound39
+40 Sound40
+41 Sound41
+42 Sound42
+43 Sound43
+44 Sound44
+45 Sound45
+
+# The only difference from regular SoundID is the default value
+!enum(name="BulletSoundID")
+-1 DefaultSound
+0 Sound0
+1 Sound1
+2 Sound2
+3 Sound3
+4 Sound4
+5 Sound5
+6 Sound6
+7 Sound7
+8 Sound8
+9 Sound9
+10 Sound10
+11 Sound11
+12 Sound12
+13 Sound13
+14 Sound14
+15 Sound15
+16 Sound16
+17 Sound17
+18 Sound18
+19 Sound19
+20 Sound20
+21 Sound21
+22 Sound22
+23 Sound23
+24 Sound24
+25 Sound25
+26 Sound26
+27 Sound27
+28 Sound28
+29 Sound29
+30 Sound30
+31 Sound31
+32 Sound32
+33 Sound33
+34 Sound34
+35 Sound35
+36 Sound36
+37 Sound37
+38 Sound38
+39 Sound39
+40 Sound40
+41 Sound41
+42 Sound42
+43 Sound43
+44 Sound44
+45 Sound45
+
+!enum(name="TimelineIndex")
+0 Timeline1
+1 Timeline2
+2 Timeline3
+3 Timeline4
+
+!difficulty_flags
+0  E-
+1  N-
+2  H-
+3  L-
+4  4+
+5  F+
+6  U+
+7  7+
+
+!enum(name="ExIns")
+# Reads: I0, F0
+0 __Stage2_Unknown_A # _
+
+1 __Mystia_SreenEffect # _
+
+# Reads: F6, F7
+# Clobbers: SELF_ANGLE
+2 __Reimu_AngleJank_A # _
+
+3 __Reimu_SpawnEffects_A # _
+
+4 __Reimu_BulletSpecial_A # _
+
+5 __Stage4_SpawnEffects # _
+
+6 __Reimu_SpawnEffects_B # _
+
+7 __Reimu_BulletSpecial_B # _
+
+# Reads: I6, I7, IC1, IC2, SELF_ORBIT_VEL
+# Clobbers: I5, I6, I7, IC1, SELF_ORBIT
+8 __Marisa_OrbitJank_A # _
+
+# Reads: F0, F1
+9 __Marisa_Unknown_A # _
+
+10 ViolentScreenShaking # _
+
+11 __Marisa_Unknown_B # _
+
+# Reads: I0, I1, F0, F1
+12 __Reisen_BulletEffects_A # _
+
+13 __Eirin_StageEffect_A # _
+
+# Reads: F1
+14 __Reisen_BulletEffects_B # _
+
+15 __Stage6AB_ScreenEffect # _
+
+# Reads: I1, IC2
+# Clobbers: I1
+16 __Eirin_BulletEffects_A # _
+
+17 __Eirin_ScreenEffect_A # _
+
+18 SetGamespeedFraction # S(imm)
+
+# Clobbers: I0
+19 SetI0ToSpellPracticeId # _
+
+20 __Reimu_SpawnEffects_C # _
+
+21 __Reimu_BulletSpecial_C # _
+
+22 ResurrectionDeclare # _
+
+23 __Mokou_SpellEffects_A # _
+
+# Clobbers: I0
+24 SetI0ToSpellCaptureCount # _
+
+# Reads: F0, F1
+25 __Marisa_Unknown_C # _
+
+26 SetTimeStopState # b(imm)---
+
+# Reads: All inheritable registers
+27 __Sakuya_BulletSpecial # _
+
+28 __Youmu_BulletSpecial_A # S(imm)
+
+29 __Youmu_BulletSpecial_B # S(imm)
+
+30 DisableScreenEffectsForTime # S(imm)
+
+# Drops a life normally, or a bomb if you have a bomb active
+31 DropLifeOrBombItem # _

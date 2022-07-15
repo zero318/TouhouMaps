@@ -1,0 +1,73 @@
+!stdmap
+
+# mappings from zero318
+
+!ins_names
+0 std_halt
+1 jump
+2 camera_position
+3 camera_position_interp
+4 camera_facing
+5 camera_facing_interp
+6 camera_rotation
+7 camera_fov
+8 fog
+9 fog_interp
+10 camera_position_interp_bezier
+11 camera_facing_interp_bezier
+12 __shaking_mode
+13 background_fill_color
+14 __background_script
+
+!ins_signatures
+0
+1 ot
+2 fff
+3 Sb(enum="InterpMode")b(enum="InterpType")--fff
+4 fff
+5 Sb(enum="InterpMode")b(enum="InterpType")--fff
+6 fff
+7 f
+8 Cff
+9 Sb(enum="InterpMode")b(enum="InterpTypeLimited")--Cff
+10 SU(enum="InterpMode")fffffffff
+11 SU(enum="InterpMode")fffffffff
+12 b(enum="ShakingMode")
+13 C
+14 S(enum="BackgroundSlot")N
+
+!ins_intrinsics
+1 Jmp()
+
+!enum(name="InterpType")
+0 Default
+8 Bezier
+
+!enum(name="InterpTypeLimited")
+0 Default
+1 None
+
+!enum(name="InterpMode")
+0 Linear
+1 DecelerateSlow
+2 Decelerate
+3 DecelerateFast
+4 AccelerateSlow
+5 Accelerate
+6 AccelerateFast
+
+!enum(name="ShakingMode")
+0 Disable
+1 ShakingMode1
+2 ShakingMode2
+3 ShakingMode3
+
+!enum(name="BackgroundSlot")
+0 BackgroundSlot0
+1 BackgroundSlot1
+2 BackgroundSlot2
+3 BackgroundSlot3
+4 BackgroundSlot4
+5 BackgroundSlot5
+6 BackgroundSlot6
+7 BackgroundSlot7

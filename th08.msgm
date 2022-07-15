@@ -1,0 +1,90 @@
+!msgmap
+
+# mappings from zero318
+
+!ins_names
+0 msg_delete
+1 portrait_anm_script
+2 portrait_anm_sprite
+3 text_dialogue
+4 wait
+5 anm_interrupt
+6 ecl_resume
+7 music
+8 text_intro
+9 stage_results
+10 msg_halt
+11 stage_end
+12 music_fade_out
+13 msg_flag_wait_skippable
+14 __screen_fade
+15 portrait_configure_all
+16 text_speaker_dialogue
+17 portrait_configure
+18 msg_flag_textbox_visible
+19 text_top_line
+20 text_bottom_line
+21 selection_box
+22 msg_read_selected
+
+!ins_signatures
+0
+1 s(enum="PortraitIndex")s(enum="AnmScript")
+2 s(enum="PortraitIndex")s(enum="AnmSprite")
+3 s(enum="TextColor")s(enum="TextLine")z(bs=4;mask=0x77,0,0)
+4 S
+5 s(enum="InterruptTarget")b-
+6
+7 S(enum="MusicIndex")
+8 s(enum="TextColor")s(enum="TextLine")z(bs=4;mask=0x77,0,0)
+9 _
+10
+11
+12
+13 b(enum="bool")---
+14
+15 S(enum="PortraitIndex")nnnn
+16 z(bs=4;mask=0x77,0,0)
+17 S(enum="PortraitIndex")n
+18 b(enum="bool")---
+19 z(bs=4;mask=0x77,0,0)
+20 z(bs=4;mask=0x77,0,0)
+21 S
+22
+
+!enum(name="PortraitIndex")
+0 LeftPortraitA
+1 LeftPortraitB
+2 RightPortraitA
+3 RightPortraitB
+
+!enum(name="TextLine")
+0 TopLine
+1 BottomLine
+
+!enum(name="TextColor")
+0 PaleBlue
+1 PalePurple
+2 PaleRedA
+3 PaleRedB
+
+!enum(name="InterruptTarget")
+0 LeftPortraitA
+1 LeftPortraitB
+2 RightPortraitA
+3 RightPortraitB
+## The specific check for these values has been removed with IN,
+## but out-of-bounds indexing would still function and I've included
+## them for the sake of compatibility.
+4 TopTextLine
+5 BottomTextLine
+
+!enum(name="MusicIndex")
+-1 Disable
+## Corresponding music IDs by stage.
+## Out of bounds indices will wrap to the next stage's values,
+## though IDK if that will screw up the sprite loading or MIDI
+## support.
+0 Music0 # 1, 3, 5, 7, 7, 10, 12, 12, 16
+1 Music1 # 2, 4, 6, 8, 9, 11, 13, 14, 17
+2 Music2 # 0, 0, 0, 0, 0,  0, 15, 15,  0

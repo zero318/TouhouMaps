@@ -1,0 +1,55 @@
+!msgmap
+
+# mappings from zero318
+
+!ins_names
+0 msg_delete
+1 initialize_player
+2 initialize_boss
+3 initialize_textbox
+4 delete_player
+5 delete_boss
+6 delete_textbox
+7 focus_player
+8 focus_boss
+9 msg_flag_wait_skippable
+10 wait
+11 ecl_resume
+12 portrait_player
+13 portrait_boss
+14 text_top_line
+15 text_bottom_line
+16 text_dialogue
+17 text_clear
+18 music_boss
+19 text_intro
+20 stage_end
+21 music_fade_out
+22 player_shake
+23 boss_shake
+
+!ins_signatures
+0
+1 _
+2 _
+3
+4
+5
+6
+7
+8
+9 b(enum="bool")--- ## b(enum="BitBool")---
+10 S
+11
+12 N
+13 N
+14 z(bs=4;mask=0x77,7,16)
+15 z(bs=4;mask=0x77,7,16)
+16 z(bs=4;mask=0x77,7,16)
+17
+18
+19
+20
+21
+22
+23

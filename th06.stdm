@@ -1,0 +1,19 @@
+!stdmap
+
+# mappings from zero318
+
+!ins_names
+0 camera_position_key
+1 fog
+2 camera_facing
+3 camera_facing_interp_linear
+4 fog_interp
+5 std_pause
+
+!ins_signatures
+0 fff
+1 Cff
+2 fff
+3 S__
+4 S__
+5 ___

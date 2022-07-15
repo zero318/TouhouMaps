@@ -1,0 +1,74 @@
+!anmmap
+
+# mappings from zero318
+
+!ins_names
+0 anm_delete
+1 sprite_set
+2 scale
+3 alpha
+4 color
+5 jump
+6 nop
+7 scale_flip_x
+8 scale_flip_y
+9 rotation
+10 rotation_speed
+11 scale_speed
+12 alpha_interp_linear
+13 blend_mode_additive
+14 blend_mode_normal
+15 anm_static
+16 sprite_set_rand
+17 move_position
+18 move_position_interp_linear
+19 move_position_interp_decelerate_slow
+20 move_position_interp_decelerate_fast
+21 anm_halt
+22 interrupt_label
+23 anchor_top_left
+24 anm_halt_invisible
+25 position_mode
+26 __rotate_auto # This might be better named "anm_effects" or something since ZUN uses it more as a catch-all special behavior field...
+27 scroll_set_x
+28 scroll_set_y
+29 anm_flag_visible
+30 scale_interp_linear
+31 anm_flag_disable_z_write
+
+!ins_signatures
+0
+1 n
+2 ff
+3 b(hex)---
+4 b(hex)b(hex)b(hex)-
+5 o
+6
+7
+8
+9 fff
+10 fff
+11 ff
+12 b(hex)---s--
+13
+14
+15
+16 nu--
+17 fff
+18 fffs--
+19 fffs--
+20 fffs--
+21
+22 S
+23
+24
+25 U(enum="bool") ## U(enum="BitBool")
+26 s--
+27 f
+28 f
+29 U(enum="bool") ## U(enum="BitBool")
+30 ffs--
+31 U(enum="bool") ## U(enum="BitBool")
+
+!ins_intrinsics
+22 Interrupt()

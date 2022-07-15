@@ -1,0 +1,290 @@
+!anmmap
+
+# mappings from zero318
+
+!ins_names
+0 nop
+1 anm_delete
+2 anm_static
+3 sprite_set
+4 jump
+5 _loop
+6 move_position
+7 scale
+8 alpha
+9 color
+10 scale_flip_x
+11 scale_flip_y
+12 rotation
+13 rotation_speed
+14 scale_speed
+15 alpha_interp_linear
+16 blend_mode_additive
+17 move_position_interp_linear
+18 move_position_interp_decelerate_slow
+19 move_position_interp_decelerate_fast
+20 anm_halt
+21 interrupt_label
+22 anchor_top_left
+23 anm_halt_invisible
+24 position_mode
+25 __rotate_auto ## sets a word field. Might be rotateAuto? Why a whole word?
+26 scroll_set_x
+27 scroll_set_y
+28 anm_flag_visible
+29 scale_interp_linear
+30 anm_flag_disable_z_write
+31 __anm_flag_unknown_std_A
+32 move_position_interp
+33 color_interp
+34 alpha_interp
+35 rotation_interp
+36 scale_interp
+37 set_int
+38 set_float
+39 math_int_add_assign
+40 math_float_add_assign
+41 math_int_sub_assign
+42 math_float_sub_assign
+43 math_int_mul_assign
+44 math_float_mul_assign
+45 math_int_div_assign
+46 math_float_div_assign
+47 math_int_mod_assign
+48 math_float_mod_assign
+49 math_int_add
+50 math_float_add
+51 math_int_sub
+52 math_float_sub
+53 math_int_mul
+54 math_float_mul
+55 math_int_div
+56 math_float_div
+57 math_int_mod
+58 math_float_mod
+59 set_int_rand_bound
+60 set_float_rand_bound
+61 math_sin
+62 math_cos
+63 math_tan
+64 math_acos
+65 math_atan
+66 math_reduce_angle
+67 jump_int_equ
+68 jump_float_equ
+69 jump_int_neq
+70 jump_float_neq
+71 jump_int_lss
+72 jump_float_lss
+73 jump_int_leq
+74 jump_float_leq
+75 jump_int_gre
+76 jump_float_gre
+77 jump_int_geq
+78 jump_float_geq
+79 wait
+80 scroll_speed_x
+81 scroll_speed_y
+82 blend_mode
+83 __bullet_type
+84 color2
+85 alpha2
+86 color2_interp
+87 alpha2_interp
+88 color_mode
+89 interrupt_return
+
+!ins_signatures
+0
+1
+2
+3 n
+4 ot
+5 Sot
+6 fff
+7 ff
+8 C
+9 CCC
+10
+11
+12 fff
+13 fff
+14 ff
+15 b(imm;hex)---S
+16 U(imm;enum="bool")
+17 fffS
+18 fffS
+19 fffS
+20
+21 S(imm)
+22
+23
+24 U(imm;enum="bool") ## U(imm;enum="BitBool")
+25 s(imm)--
+26 f
+27 f
+28 U(imm;enum="bool") ## U(imm;enum="BitBool")
+29 ffS
+30 U(imm;enum="bool") ## U(imm;enum="BitBool")
+31 U(imm;enum="bool") ## U(imm;enum="BitBool")
+32 Sb(imm;enum="InterpMode")---fff
+33 Sb(imm;enum="InterpMode")---CCC
+34 Sb(imm;enum="InterpMode")---C
+35 Sb(imm;enum="InterpMode")---fff
+36 Sb(imm;enum="InterpMode")---ff
+37 SS
+38 ff
+39 SS
+40 ff
+41 SS
+42 ff
+43 SS
+44 ff
+45 SS
+46 ff
+47 SS
+48 ff
+49 SSS
+50 fff
+51 SSS
+52 fff
+53 SSS
+54 fff
+55 SSS
+56 fff
+57 SSS
+58 fff
+59 SU
+60 ff
+61 ff
+62 ff
+63 ff
+64 ff
+65 ff
+66 f
+67 SSot
+68 ffot
+69 SSot
+70 ffot
+71 SSot
+72 ffot
+73 SSot
+74 ffot
+75 SSot
+76 ffot
+77 SSot
+78 ffot
+79 S
+80 f
+81 f
+82 U(imm;enum="BlendMode")
+83 S(imm;enum="BulletType")
+84 CCC
+85 C
+86 Sb(imm;enum="InterpMode")---CCC
+87 Sb(imm;enum="InterpMode")---C
+88 -b(imm;enum="ColorMode")--
+89
+
+!gvar_names
+10000 I0
+10001 I1
+10002 I2
+10003 I3
+10004 F0
+10005 F1
+10006 F2
+10007 F3
+10008 IC0
+10009 IC1
+10010 RAND_ANGLE
+10011 RAND_FLOAT
+10012 RAND_FLOAT_SIGNED
+
+!gvar_types
+10000 $
+10001 $
+10002 $
+10003 $
+10004 %
+10005 %
+10006 %
+10007 %
+10008 $
+10009 $
+10010 %
+10011 %
+10012 %
+
+!ins_intrinsics
+4 Jmp()
+5 CountJmp(op=">")
+21 Interrupt()
+37 AssignOp(op="=";type="int")
+38 AssignOp(op="=";type="float")
+39 AssignOp(op="+=";type="int")
+40 AssignOp(op="+=";type="float")
+41 AssignOp(op="-=";type="int")
+42 AssignOp(op="-=";type="float")
+43 AssignOp(op="*=";type="int")
+44 AssignOp(op="*=";type="float")
+45 AssignOp(op="/=";type="int")
+46 AssignOp(op="/=";type="float")
+47 AssignOp(op="%=";type="int")
+48 AssignOp(op="%=";type="float")
+49 BinOp(op="+";type="int")
+50 BinOp(op="+";type="float")
+51 BinOp(op="-";type="int")
+52 BinOp(op="-";type="float")
+53 BinOp(op="*";type="int")
+54 BinOp(op="*";type="float")
+55 BinOp(op="/";type="int")
+56 BinOp(op="/";type="float")
+57 BinOp(op="%";type="int")
+58 BinOp(op="%";type="float")
+61 UnOp(op="sin";type="float")
+62 UnOp(op="cos";type="float")
+#63 UnOp(op="tan";type="float")
+#64 UnOp(op="acos";type="float")
+#65 UnOp(op="atan";type="float")
+67 CondJmp(op="==";type="int")
+68 CondJmp(op="==";type="float")
+69 CondJmp(op="!=";type="int")
+70 CondJmp(op="!=";type="float")
+71 CondJmp(op="<";type="int")
+72 CondJmp(op="<";type="float")
+73 CondJmp(op="<=";type="int")
+74 CondJmp(op="<=";type="float")
+75 CondJmp(op=">";type="int")
+76 CondJmp(op=">";type="float")
+77 CondJmp(op=">=";type="int")
+78 CondJmp(op=">=";type="float")
+
+!enum(name="InterpMode")
+0 Linear
+1 AccelerateSlow
+2 Accelerate
+3 AccelerateFast
+4 DecelerateSlow
+5 Decelerate
+6 DecelerateFast
+
+!enum(name="BlendMode")
+0 Normal
+1 Additive
+## Mode 2 doesn't appear to be implemented...?
+2 BlendMode2
+## Mode 3 is set internally by something...
+3 BlendMode3
+
+!enum(name="ColorMode")
+0 Color1Only
+1 Color2Only
+
+!enum(name="BulletType")
+0 BulletType0
+1 BulletType1
+2 BulletType2
+3 BulletType3
+4 BulletType4
+5 BulletType5
