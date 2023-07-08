@@ -805,18 +805,22 @@
 19 Fireball
 
 !enum(name="BulletColor")
-#0 Red4
-#1 Blue4
-#2 Green4
-#3 Yellow4
-#0 Gray8
-#1 Red8
-#2 Purple8
-#3 Blue8
-#4 Cyan8
-#5 Green8
-#6 Yellow8
-#7 White8
+0 Fireball0
+1 Fireball1
+2 Fireball2
+3 Fireball3
+0 Red4
+1 Blue4
+2 Green4
+3 Yellow4
+0 Gray8
+1 Red8
+2 Purple8
+3 Blue8
+4 Cyan8
+5 Green8
+6 Yellow8
+7 White8
 0 Gray
 1 DarkRed
 2 Red

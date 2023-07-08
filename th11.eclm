@@ -88,7 +88,7 @@
 275 anm_interrupt_slot
 276 anm_play_main
 277 anm_rotate_slot
-287 __nop_278
+278 __nop_278
 
 ## Section C
 280 move_position_abs

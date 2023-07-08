@@ -96,6 +96,7 @@
 279 anm_move_position_slot
 280 __enemy_create_rel_2
 281 __anm_set_slot_indirect
+282 __anm_unknown_282
 
 ## Section C
 300 move_position_abs
@@ -130,6 +131,8 @@
 329 move_velocity_no_mirror_abs_interp
 330 move_velocity_no_mirror_rel
 331 move_velocity_no_mirror_rel_interp
+332 move_to_enemy_id_abs
+333 move_to_enemy_id_rel
 
 ## Section D
 400 enemy_set_hitbox
@@ -159,7 +162,7 @@
 424 chapter_set
 425 enemy_kill_all
 426 player_protect_range
-427 enemy_lifebar_color
+427 __nop_427
 428 spellcard_start_2
 429 set_float_rank_3 ## BROKEN, can't read middle value
 430 set_float_rank_5
@@ -172,7 +175,7 @@
 437 spellcard_start_difficulty
 438 spellcard_start_difficulty_1
 439 spellcard_start_difficulty_2
-440 boss_set_life_count
+440 __nop_440
 441 enemy_no_collision_timer
 442 spellcard_flag_timeout_set
 443 __spellcard_flag_anm_unknown
@@ -186,9 +189,16 @@
 451 enemy_kill_all_id
 452 anm_layer_base
 453 __enemy_damage_sound
-454 __stage_logo
+454 __nop_454
 455 __enemy_id_exists
 456 __enemy_id_get_position
+457 __unknown_457
+458 __unknown_458
+459 __unknown_459
+460 __unknown_460
+461 __unknown_461
+462 __unknown_462
+463 __death_callback_sub
 
 ## Section E
 500 shooter_reset
@@ -227,6 +237,7 @@
 533 bullet_clear_weak_radius
 534 ex_ins_call
 535 score_add
+536 __ex_ins_repeat_B
 
 ## Section F
 600 laser_size_data
@@ -241,6 +252,7 @@
 609 laser_rotate
 610 laser_clear
 611 laser_curve_create
+612 bullet_cancel_rect
 
 ## Section G
 700 __debug_nop_700
@@ -336,6 +348,7 @@
 279 S(enum="AnmSlotIndex")ff
 280 P(bs=4)ffSSS(enum="ItemID")
 281 S(enum="AnmSlotIndex")S(enum="AnmSlotIndirectIndex")
+282 SS
 300 ff
 301 SS(enum="InterpMode")ff
 302 ff
@@ -368,6 +381,8 @@
 329 SS(enum="InterpMode")ff
 330 ff
 331 SS(enum="InterpMode")ff
+332 S
+333 S
 400 ff
 401 ff
 402 S(hex;enum="EnemyFlagsSet")
@@ -425,6 +440,13 @@
 454
 455 SS
 456 ffS
+457
+458 S
+459 S
+460 f
+461 f
+462 S
+#463 P(bs=4)
 500 S(enum="ShooterIndex")
 501 S(enum="ShooterIndex")
 502 S(enum="ShooterIndex")S(enum="BulletSprite")S(enum="BulletColor")
@@ -461,6 +483,7 @@
 533 f
 534 S(enum="ExIns")
 535 S
+536 S(enum="ExIns")
 600 S(enum="ShooterIndex")ffff
 601 S(enum="ShooterIndex")SSSSS(hex;enum="LaserFlags")
 602 S(enum="ShooterIndex")
@@ -473,10 +496,11 @@
 609 Sf
 610 S
 611 S(enum="ShooterIndex")
+612 ff
 700 S
 
 !gvar_names
--10000 RAND_UINT
+-10000 RAND_INT
 -9999 RAND_FLOAT
 -9998 RAND_ANGLE
 -9997 SELF_X
@@ -547,6 +571,26 @@
 -9932 F7
 -9931 PREV_ENEMY_ID
 -9930 PLAYER_POWER
+-9929 __PLAYER_UNKNOWN_A
+-9928 __PLAYER_UNKNOWN_B
+-9927 __GAME_THREAD_UNKNOWN_A
+-9926 GI0
+-9925 GI1
+-9924 GI2
+-9923 GI3
+-9922 GF0
+-9921 GF1
+-9920 GF2
+-9919 GF3
+-9918 GF4
+-9917 GF5
+-9916 GF6
+-9915 GF7
+-9914 SELF_ID
+-9913 PHOTOS_TAKEN
+-9912 __PLAYER_UNKNOWN_C
+-9911 BOSS0_ANGLE
+-9910 BOSS0_SPEED_ABS
 
 -1 STACK_TOP
 0 LOCAL_A
@@ -647,6 +691,26 @@
 -9932 %
 -9931 $
 -9930 $
+-9929 $
+-9928 $
+-9927 $
+-9926 $
+-9925 $
+-9924 $
+-9923 $
+-9922 %
+-9921 %
+-9920 %
+-9919 %
+-9918 %
+-9917 %
+-9916 %
+-9915 %
+-9914 $
+-9913 $
+-9912 $
+-9911 %
+-9910 %
 
 -1 ?
 0 ?
@@ -726,30 +790,13 @@
 #79 StackUnOp(op="sin";type="float")
 #80 StackUnOp(op="cos";type="float")
 #84 StackUnOp(op="-";type="int")
-##85 StackUnOp(op="-";type="float") # Instruction is broken until later games, uncomment if a patch fixes it
+#85 StackUnOp(op="-";type="float")
 #88 StackUnOp(op="sqrt";type="float")
 
 !enum(name="BonusDropIndex")
 0 MainDrop
 1 BonusDrop0
 2 BonusDrop1
-3 BonusDrop2
-4 BonusDrop3
-5 BonusDrop4
-6 BonusDrop5
-7 BonusDrop6
-8 BonusDrop7
-9 BonusDrop8
-10 BonusDrop9
-11 BonusDrop10
-12 BonusDrop11
-13 BonusDrop12
-14 BonusDrop13
-15 BonusDrop14
-16 BonusDrop15
-17 BonusDrop16
-18 BonusDrop17
-19 BonusDrop18
 
 !enum(name="ItemID")
 -1 NoItem
@@ -898,14 +945,14 @@
 4 Func4
 5 Func5
 6 Func6
+7 Func7
+8 Func8
 
 !enum(name="ExDamage")
 0 Disable
-1 ExDamage1
 
 !enum(name="ExHitbox")
 0 Disable
-1 ExHitbox1
 
 !difficulty_flags
 0  E-

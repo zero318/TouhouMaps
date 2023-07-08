@@ -739,7 +739,7 @@
 
 !enum(name="LaserFlags")
 
-!enum(name"UnknownIndexA")
+!enum(name="UnknownIndexA")
 0 UnknownA0
 1 UnknownA1
 2 UnknownA2

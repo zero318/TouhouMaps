@@ -32,7 +32,7 @@
 9 Sb(enum="InterpMode")b(enum="InterpTypeLimited")--Cff
 10 SU(enum="InterpMode")fffffffff
 11 SU(enum="InterpMode")fffffffff
-12 b(enum="ShakingMode")
+12 b(enum="ShakingMode")---
 13 C
 14 S(enum="BackgroundSlot")N
 
