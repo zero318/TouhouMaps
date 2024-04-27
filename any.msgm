@@ -1,15 +1,14 @@
 !gamemap
+# 95 and 103 don't have msg files
 !game_files
 6   th06.msgm
 7   th07.msgm
 8   th08.msgm
 9   th09.msgm
-#95  
 10  th10.msgm
-#103 
 11  th11.msgm
 12  th12.msgm
-#125 
+125 th12.msgm ## Formats unchanged from UFO (Look into this more!)
 #128 
 #13  
 #14  
@@ -20,4 +19,4 @@
 #17  
 #18  
 #185 
-#19  
+19  th19.msgm

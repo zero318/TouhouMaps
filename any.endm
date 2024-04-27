@@ -1,0 +1,18 @@
+!gamemap
+# 95, 103, 125, 143, 165, and 185 don't have end files
+!game_files
+#6   
+#7   
+#8   
+#9   
+10  th10.endm
+11  th10.endm
+12  th10.endm
+128 th10.endm
+13  th10.endm
+14  th10.endm
+15  th10.endm
+16  th10.endm
+17  th10.endm
+18  th10.endm
+19  th10.endm

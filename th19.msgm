@@ -1,0 +1,172 @@
+!msgmap
+
+# mappings from zero318
+
+!ins_names
+0 msg_delete
+1 initialize_player
+2 initialize_boss
+3 initialize_textbox
+4 delete_player
+5 delete_boss
+6 delete_textbox
+7 focus_player
+8 focus_boss
+9 focus_none
+10 msg_flag_wait_skippable
+11 wait
+12 ecl_resume
+13 portrait_player
+14 portrait_boss
+15 text_top_line
+16 text_bottom_line
+17 text_dialogue
+18 text_clear
+19 music
+20 text_intro
+21 stage_end
+22 music_fade_out
+23 player_shake
+24 boss_shake
+25 text_offset
+26 __unknown_flag_set_A
+27 music_fade_out_time
+28 text_position
+29 text_type
+32 __unknown_A
+33 __portait_darken
+34 __portait_lighten
+35 __gui_overlay
+36 __store_open
+37 __initialize_infobox
+38 __focus_infobox
+39 __delete_infobox
+40 __unknown_text_A
+41 __unknown_text_B
+42 __focus_current_side
+43 __focus_opposite_side
+44 __unknown_position_A
+45 __unknown_position_B
+46 __portrait_current_side
+47 __portrait_opposite_side
+48 __initialize_current_side
+49 __initialize_opposite_side
+50 __delete_current_side
+51 __delete_opposite_side
+52 __gui_unknown_A
+53 __player_unknown_A
+54 __player_unknown_B
+55 __spawn_msg_boss_enemy
+56 __gui_unknown_B
+
+!ins_signatures
+0
+1 S(enum="PortraitIndex")
+2 S(enum="PortraitIndex")
+3
+4 S(enum="PortraitSide")
+5 S(enum="PortraitSide")
+6
+7 S(enum="PortraitSide")
+8 S(enum="PortraitSide")
+9
+10 b(enum="bool")--- ## b(enum="BitBool")---
+11 S
+12
+13 NS(enum="PortraitIndex")
+14 NS(enum="PortraitIndex")
+15 z(bs=4;mask=0x77,7,16;furibug)
+16 z(bs=4;mask=0x77,7,16;furibug)
+17 z(bs=4;mask=0x77,7,16;furibug)
+18
+19 S(enum="MusicIndex")
+20 _
+21
+22
+23
+24
+25 S
+26
+27 f
+28 ff
+29 S(enum="TextType")
+# 30 and 31 don't exist
+32 S
+33 S(enum="PortraitSide")S(enum="PortraitIndex")
+34 S(enum="PortraitSide")S(enum="PortraitIndex")
+35
+36
+37
+38
+39
+40 z(bs=4;mask=0x77,7,16;furibug)
+41 z(bs=4;mask=0x77,7,16;furibug)
+42 S(enum="PortraitSide")
+43 S(enum="PortraitSide")
+44 ff
+45 ff
+46 NS(enum="PortraitIndex")
+47 NS(enum="PortraitIndex")
+48 S(enum="PortraitIndex")
+49 S(enum="PortraitIndex")
+50 S(enum="PortraitSide")
+51 S(enum="PortraitSide")
+52
+53
+54
+55
+56
+
+!enum(name="PortraitIndex")
+0 Portrait0
+1 Portrait1
+2 Portrait2
+3 Portrait3
+
+!enum(name="PortraitSide")
+0 LeftSide
+1 RightSide
+
+!enum(name="TextType")
+0 TextType0
+1 TextType1
+2 TextType2
+3 TextType3
+4 TextType4
+5 TextType5
+6 TextType6
+7 TextType7
+8 TextType8
+9 TextType9
+10 TextType10
+11 TextType11
+12 TextType12
+13 TextType13
+14 TextType14
+15 TextType15
+
+!enum(name="MusicIndex")
+0 Music0
+1 Music1
+2 Music2
+3 Music3
+4 Music4
+5 Music5
+6 Music6
+7 Music7
+8 Music8
+9 Music9
+10 Music10
+11 Music11
+12 Music12
+13 Music13
+14 Music14
+15 Music15
+16 Music16
+17 Music17
+18 Music18
+19 Music19
+20 Music20
+21 Music21
+22 Music22
+23 Music23

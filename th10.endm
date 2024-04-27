@@ -1,0 +1,40 @@
+!endmap
+
+# mappings from zero318
+
+!ins_names
+0 end_delete
+# 1 and 2 don't exist
+#3 
+#4 
+#5 
+#6 
+#7 
+#8 
+#9 
+#10 
+#11 
+#12 
+#13 
+#14 
+#15 
+#16 
+#17 
+
+!ins_signatures
+0
+3 z(bs=4;mask=0x77,7,16)
+4
+5 S
+6 S
+7 Sz(bs=4)
+8 SSN
+9 C
+10 z(bs=4)
+11
+12 z(bs=4)
+13 S
+14 S
+15 SSN
+16 SSN
+17 SSN

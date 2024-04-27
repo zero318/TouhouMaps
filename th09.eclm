@@ -323,7 +323,7 @@
 135 S(enum="AsyncIndex")E
 136 S(enum="ExIns")S(imm) ## S(enum="ExIns")v
 137 S(enum="ExIns")S(imm) ## S(enum="ExIns")v
-138 c(imm;enum="EffectID")b(imm;enum="EffectID2")b(imm)_
+138 c(imm;enum="EffectID")b(imm;enum="EffectID2")b(imm)-
 139 S(enum="EffectID")UC
 140 S(enum="EffectID")UCfff
 143 S(enum="ItemID")

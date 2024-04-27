@@ -1,0 +1,615 @@
+!eclmap
+
+# mappings from zero318
+
+!ins_names
+## Section A
+0 nop
+1 enemy_delete
+10 ret
+11 call
+12 jump
+13 jump_equ
+14 jump_neq
+15 async_call
+16 async_call_id
+17 async_stop_id
+18 __async_unknown_flag_set
+19 __async_unknown_flag_clear
+20 __async_unknown_value
+21 async_stop_all
+30 debug_print
+40 frame_enter
+41 frame_leave
+42 push_int
+43 pop_int
+44 push_float
+45 pop_float
+50 math_int_add
+51 math_float_add
+52 math_int_sub
+53 math_float_sub
+54 math_int_mul
+55 math_float_mul
+56 math_int_div
+57 math_float_div
+58 math_int_mod
+59 cmp_int_equ
+60 cmp_float_equ
+61 cmp_int_neq
+62 cmp_float_neq
+63 cmp_int_les
+64 cmp_float_les
+65 cmp_int_leq
+66 cmp_float_leq
+67 cmp_int_gre
+68 cmp_float_gre
+69 cmp_int_geq
+70 cmp_float_geq
+71 cmp_int_not
+72 cmp_float_not
+73 cmp_or
+74 cmp_and
+75 math_bit_xor
+76 math_bit_or
+77 math_bit_and
+78 math_post_dec
+79 math_sin
+80 math_cos
+81 math_circle_pos
+82 math_reduce_angle
+83 ecl_time_sub
+84 math_int_neg
+85 math_float_neg ## BROKEN, uses integer NEG on a float
+86 math_hypot_squared
+87 math_line_angle
+88 math_sqrt
+89 math_angle_diff
+
+## Section B
+256 enemy_create_rel
+257 enemy_create_abs
+258 anm_source
+259 anm_set_slot
+260 enemy_create_rel_mirror
+261 enemy_create_abs_mirror
+262 anm_set_slot_main
+263 anm_create_rel_front
+264 anm_create_front
+265 enemy_create_rel_stage
+266 enemy_create_abs_stage
+267 enemy_create_rel_stage_mirror
+268 enemy_create_abs_stage_mirror
+269 anm_play_attack
+270 __enemy_create_background
+271 __enemy_create_background_stage
+272 anm_create_rel_back
+273 anm_create_rel_front_rotated
+274 anm_play_attack_ex
+275 anm_interrupt_slot
+276 anm_play_main
+277 anm_rotate_slot
+278 anm_scale_slot
+279 anm_move_position_slot
+280 __enemy_create_rel_2
+281 __anm_set_slot_indirect
+
+## Section C
+300 move_position_abs
+301 move_position_abs_interp
+302 move_position_rel
+303 move_position_rel_interp
+304 move_velocity_abs
+305 move_velocity_abs_interp
+306 move_velocity_rel
+307 move_velocity_rel_interp
+308 move_orbit_abs
+309 move_orbit_abs_interp
+310 move_orbit_rel
+311 move_orbit_rel_interp
+312 move_rand_interp_abs
+313 move_rand_interp_rel
+314 move_to_boss0_abs
+315 move_to_boss0_rel
+316 move_position_add_abs
+317 move_position_add_rel
+318 __move_position_interp_current_abs ## BROKEN, falls through to move_ellipse_rel
+319 __move_position_interp_current_rel ## BROKEN, falls through to move_ellipse_rel
+320 move_ellipse_abs
+321 move_ellipse_abs_interp
+322 move_ellipse_rel
+323 move_ellipse_rel_interp
+324 enemy_flag_mirror
+325 move_bezier_abs
+326 move_bezier_rel
+327 move_stop
+328 move_velocity_no_mirror_abs
+329 move_velocity_no_mirror_abs_interp
+330 move_velocity_no_mirror_rel
+331 move_velocity_no_mirror_rel_interp
+
+## Section D
+400 enemy_set_hitbox
+401 enemy_set_collision
+402 enemy_flags_set
+403 enemy_flags_clear
+404 move_bounds_set
+405 move_bounds_disable
+406 item_bonus_slots_reset
+407 item_bonus_slot_set
+408 item_drop_area
+409 drop_item_rewards
+410 item_reward_set
+411 enemy_life_set
+412 boss_set
+413 boss_timer_clear
+414 callback_ex
+415 enemy_invincible_timer
+416 effect_sound
+417 effect_screen_shake
+418 msg_read
+419 msg_wait
+420 boss0_wait
+421 timer_callback_sub
+422 spellcard_start
+423 spellcard_end
+424 chapter_set
+425 enemy_kill_all
+426 player_protect_range
+427 enemy_lifebar_color
+428 spellcard_start_2
+429 set_float_rank_3 ## BROKEN, can't read middle value
+430 set_float_rank_5
+431 math_float_rank_lerp
+432 set_int_rank_3 ## BROKEN, can't read middle value
+433 set_int_rank_5
+434 math_int_rank_lerp
+435 set_int_difficulty
+436 set_float_difficulty
+437 spellcard_start_difficulty
+438 spellcard_start_difficulty_1
+439 spellcard_start_difficulty_2
+440 boss_set_life_count
+441 enemy_no_collision_timer
+442 spellcard_flag_timeout_set
+443 __spellcard_flag_anm_unknown
+444 enemy_flag_homing_disable
+445 laser_clear_all
+446 enemy_bomb_shield
+447 game_speed_set
+448 ecl_time_sub_difficulty
+449 __enemy_flag_unknown_A
+450 enemy_kill_id_set
+451 enemy_kill_all_id
+452 anm_layer_base
+453 __enemy_damage_sound
+454 __stage_logo
+455 __enemy_id_exists
+456 __enemy_id_get_position
+
+## Section E
+500 shooter_reset
+501 shoot_now
+502 bullet_sprite
+503 shoot_offset
+504 shoot_angle
+505 bullet_speed
+506 bullet_count
+507 shoot_aim_mode
+508 bullet_sound
+509 bullet_effects
+510 bullet_cancel
+511 shooter_copy
+512 bullet_cancel_radius
+513 bullet_clear_radius
+514 bullet_speed_rank_3
+515 bullet_speed_rank_5
+516 bullet_speed_rank_lerp
+517 bullet_count_rank_3
+518 bullet_count_rank_5
+519 bullet_count_rank_lerp
+520 set_float_angle_to_player_from_point
+521 bullet_speed_difficulty
+522 bullet_count_difficulty
+523 shoot_offset_circle
+524 shoot_spawn_distance
+525 __shoot_unknown_A
+526 enemy_fog_spawn
+527 std_interrupt
+528 __enemy_manager_flag_unknown_A
+529 ex_ins_repeat
+530 __enemy_damage_ex
+531 __enemy_hitbox_ex
+532 bullet_cancel_weak_radius
+533 bullet_clear_weak_radius
+534 ex_ins_call
+535 score_add
+
+## Section F
+600 laser_size_data
+601 laser_timing_data
+602 laser_line_create
+603 laser_infinite_create
+604 laser_offset
+605 laser_target
+606 laser_speed
+607 laser_width
+608 laser_angle
+609 laser_rotate
+610 laser_clear
+611 laser_curve_create
+
+## Section G
+700 __debug_nop_700
+
+!ins_signatures
+0
+1
+10
+11 m*D
+12 ot
+13 ot
+14 ot
+15 m*D
+16 mS*D
+17 S
+18 S
+19 S
+20 SS
+21 
+#30 mv(rep="g")
+40 S
+41
+42 S
+43 S
+44 f
+45 f
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78 S
+79
+80
+81 ffff
+82 f
+83 S
+84
+85
+86 fff
+87 fffff
+88
+89 fff
+256 mffSSS
+257 mffSSS
+258 S
+259 SS
+260 mffSSS
+261 mffSSS
+262 SS
+263 SS
+264 SS
+265 mffSSS
+266 mffSSS
+267 mffSSS
+268 mffSSS
+269 S
+270 mfffSSS
+271 mfffSSS
+272 SS
+273 SSf
+274 SS
+275 SS
+276
+277 Sf
+278 Sff
+279 Sff
+280 mffSSS
+281 SS
+300 ff
+301 SSff
+302 ff
+303 SSff
+304 ff
+305 SSff
+306 ff
+307 SSff
+308 ffff
+309 SSfff
+310 ffff
+311 SSfff
+312 SSf
+313 SSf
+314
+315
+316 fff
+317 fff
+318 ff
+319 ff
+320 ffffff
+321 SSfffff
+322 ffffff
+323 SSfffff
+324 S
+325 Sffffff
+326 Sffffff
+327
+328 ff
+329 SSff
+330 ff
+331 SSff
+400 ff
+401 ff
+402 S
+403 S
+404 ffff
+405
+406
+407 SS
+408 ff
+409
+410 S
+411 S
+412 S
+413
+414 SSSm
+415 S
+416 S
+417 SSS
+418 S
+419
+420
+421 Sm
+422 SSSx
+423
+424 S
+425
+426 f
+427 SfS
+428 SSSx
+429 ffff
+430 fffff
+431 fff
+432 SSSS
+433 SSSSS
+434 SSS
+435 SSSSS
+436 fffff
+437 SSSx
+438 SSSx
+439 SSSx
+440 S
+441 S
+442
+443
+444 S
+445
+446 SS
+447 f
+448 SSSS
+449 S
+450 S
+451 S
+452 S
+453 S
+454
+455 SS
+456 ffS
+500 S
+501 S
+502 SSS
+503 Sff
+504 Sff
+505 Sff
+506 SSS
+507 SS
+508 SSS
+509 SSSSSSff
+510
+511 SS
+512 f
+513 f
+514 Sffffff
+515 Sffffffffff
+516 Sffff
+517 SSSSSSS
+518 SSSSSSSSSSS
+519 SSSSS
+520 fff
+521 Sffffffff
+522 SSSSSSSSS
+523 Sff
+524 Sf
+525 Sff
+526 fS
+527 S
+528 S
+529 S
+530 S
+531 S
+532 f
+533 f
+534 S
+535 S
+600 Sffff
+601 SSSSSS
+602 S
+603 SS
+604 Sff
+605 Sff
+606 Sf
+607 Sf
+608 Sf
+609 Sf
+610 S
+611 S
+700 S
+
+!gvar_names
+-10000 RAND_UINT
+-9999 RAND_FLOAT
+-9998 RAND_ANGLE
+-9997 SELF_X
+-9996 SELF_Y
+-9995 SELF_X_ABS
+-9994 SELF_Y_ABS
+-9993 SELF_X_REL
+-9992 SELF_Y_REL
+-9991 PLAYER_X
+-9990 PLAYER_Y
+-9989 PLAYER_ANGLE
+-9988 BOSS_TIMER
+-9987 RAND_FLOAT_SIGNED
+-9986 SPELL_TIMEOUT
+-9985 I0
+-9984 I1
+-9983 I2
+-9982 I3
+-9981 F0
+-9980 F1
+-9979 F2
+-9978 F3
+-9977 SELF_X2
+-9976 SELF_Y2
+-9975 SELF_X2_ABS
+-9974 SELF_Y2_ABS
+-9973 SELF_X2_REL
+-9972 SELF_Y2_REL
+-9971 SELF_ANGLE_ABS
+-9970 SELF_ANGLE_REL
+-9969 SELF_SPEED_ABS
+-9968 SELF_SPEED_REL
+-9967 SELF_ORBIT_RADIUS_ABS
+-9966 SELF_ORBIT_RADIUS_REL
+-9965 PLAYER_X2
+-9964 PLAYER_Y2
+-9963 BOSS0_X
+-9962 BOSS0_Y
+-9961 ANM_SLOT0_ID
+-9960 RANK
+-9959 DIFFICULTY
+-9958 SELF_ANGLE
+-9957 TRUE_VAR
+-9956 PLAYER_ANGLE_ABS
+-9955 PLAYER_ANGLE_REL
+-9954 SELF_LIFE
+-9953 EASY
+-9952 NORMAL
+-9951 HARD
+-9950 LUNATIC
+-9949 PLAYER_DEATHS
+-9948 PLAYER_BOMBS_USED
+-9947 __ENEMY_MANAGER_UNKNOWN_A
+-9946 __ENEMY_MANAGER_UNKNOWN_B
+-9945 PLAYER_SHOT
+-9944 PLAYER_DISTANCE
+-9943 BOSS0_I0
+-9942 BOSS0_I1
+-9941 BOSS0_I2
+-9940 BOSS0_I3
+-9939 BOSS0_F0
+-9938 BOSS0_F1
+-9937 BOSS0_F2
+-9936 BOSS0_F3
+-9935 F4
+-9934 F5
+-9933 F6
+-9932 F7
+-9931 PREV_ENEMY_ID
+-9930 PLAYER_POWER
+
+!gvar_types
+-10000 $
+-9999 %
+-9998 %
+-9997 %
+-9996 %
+-9995 %
+-9994 %
+-9993 %
+-9992 %
+-9991 %
+-9990 %
+-9989 %
+-9988 $
+-9987 %
+-9986 $
+-9985 $
+-9984 $
+-9983 $
+-9982 $
+-9981 %
+-9980 %
+-9979 %
+-9978 %
+-9977 %
+-9976 %
+-9975 %
+-9974 %
+-9973 %
+-9972 %
+-9971 %
+-9970 %
+-9969 %
+-9968 %
+-9967 %
+-9966 %
+-9965 %
+-9964 %
+-9963 %
+-9962 %
+-9961 $
+-9960 $
+-9958 %
+-9957 $
+-9956 %
+-9955 %
+-9954 $
+-9953 $
+-9952 $
+-9951 $
+-9950 $
+-9949 $
+-9948 $
+-9947 $
+-9946 $
+-9945 $
+-9944 %
+-9943 $
+-9942 $
+-9941 $
+-9940 $
+-9939 %
+-9938 %
+-9937 %
+-9936 %
+-9935 %
+-9934 %
+-9933 %
+-9932 %
+-9931 $
+-9930 $
