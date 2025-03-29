@@ -1,0 +1,630 @@
+!anmmap
+
+# mappings from zero318
+
+!ins_names
+## Section A
+0 nop
+1 anm_delete
+2 anm_static
+3 anm_halt
+4 anm_halt_invisible
+5 interrupt_label
+6 wait
+7 interrupt_return
+
+## Section B
+100 set_int
+101 set_float
+102 math_int_add_assign
+103 math_float_add_assign
+104 math_int_sub_assign
+105 math_float_sub_assign
+106 math_int_mul_assign
+107 math_float_mul_assign
+108 math_int_div_assign
+109 math_float_div_assign
+110 math_int_mod_assign
+111 math_float_mod_assign
+112 math_int_add
+113 math_float_add
+114 math_int_sub
+115 math_float_sub
+116 math_int_mul
+117 math_float_mul
+118 math_int_div
+119 math_float_div
+120 math_int_mod
+121 math_float_mod
+122 set_int_rand_bound
+123 set_float_rand_bound
+124 math_sin
+125 math_cos
+126 math_tan
+127 math_acos
+128 math_atan
+129 math_reduce_angle
+130 math_circle_pos_fast
+131 math_circle_pos_rand
+
+## Section C
+200 jump
+201 _loop
+202 jump_int_equ
+203 jump_float_equ
+204 jump_int_neq
+205 jump_float_neq
+206 jump_int_lss
+207 jump_float_lss
+208 jump_int_leq
+209 jump_float_leq
+210 jump_int_gre
+211 jump_float_gre
+212 jump_int_geq
+213 jump_float_geq
+
+## Section D
+300 sprite_set
+301 sprite_set_rand_bound
+302 render_mode
+303 blend_mode
+304 layer
+305 anm_flag_disable_z_write
+306 __anm_flag_unknown_std_A
+307 rand_mode
+308 scale_flip_x
+309 scale_flip_y
+310 anm_flag_visible
+311 resample_mode
+312 scroll_mode
+313 resolution_mode
+314 anm_flag_inherit_rotation
+315 anm_flag_color_children
+316 __anm_flag_set_unknown_J
+317 __anm_flag_clear_unknown_J
+
+## Section E
+400 move_position
+401 rotation
+402 scale
+403 alpha
+404 color
+405 alpha_gradient
+406 color_gradient
+407 move_position_interp
+408 color_interp
+409 alpha_interp
+410 rotation_interp
+411 spin_interp
+412 scale_interp
+413 color_gradient_interp
+414 alpha_gradient_interp
+415 rotation_speed
+416 scale_speed
+417 alpha_interp_linear
+418 sprite_window
+419 __anm_flag_unknown_Q
+420 move_bezier
+421 anchor_mode
+422 position_inherit
+423 color_mode
+424 anm_flag_auto_rotate
+425 scroll_speed_x
+426 scroll_speed_y
+427 scroll_speed_x_interp
+428 scroll_speed_y_interp
+429 uv_scale
+430 uv_scale_interp
+431 __anm_flag_unknown_T
+432 anm_flag_slowdown_immune
+433 move_velocity_interp
+434 scale2
+435 scale2_interp
+436 anchor_offset
+437 rotation_mode
+438 origin_mode
+439 camera_fade
+
+## Section F
+500 anm_create_child_back
+501 anm_create_child_ui_back
+502 anm_create_child_front
+503 anm_create_child_ui_front
+504 anm_create_back
+505 anm_create_child_back_rel
+506 anm_create_back_rel
+507 __anm_flag_use_root_vm_slowdown
+508 effect_create
+509 copy_parent_context
+
+## Section G
+600 textured_ring
+601 textured_arc_A
+602 textured_arc_B
+603 polygon_rectangle
+604 polygon
+605 polygon_hollow
+606 polygon_rectangle_gradient
+607 polygon_rectangle_antialias
+608 polygon_rectangle_gradient_antialias
+609 textured_cylinder
+610 textured_ring_3D
+611 polygon_ring
+612 polygon_rectangle_hollow
+613 polygon_line
+614 __polygon_unknown_A
+
+!ins_signatures
+## Section A
+0
+1
+2
+3
+4
+5 S(imm)
+6 S
+7
+
+## Section B
+100 SS
+101 ff
+102 SS
+103 ff
+104 SS
+105 ff
+106 SS
+107 ff
+108 SS
+109 ff
+110 SS
+111 ff
+112 SSS
+113 fff
+114 SSS
+115 fff
+116 SSS
+117 fff
+118 SSS
+119 fff
+120 SSS
+121 fff
+122 SU
+123 ff
+124 ff
+125 ff
+126 ff
+127 ff
+128 ff
+129 f
+130 ffff
+131 ffff
+
+## Section C
+200 ot
+201 Sot
+202 SSot
+203 ffot
+204 SSot
+205 ffot
+206 SSot
+207 ffot
+208 SSot
+209 ffot
+210 SSot
+211 ffot
+212 SSot
+213 ffot
+
+## Section D
+300 n
+301 nU
+302 b(imm;enum="RenderMode")---
+303 b(imm;enum="BlendMode")---
+304 b(imm;enum="AnmLayerIndex")---
+305 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+306 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+307 b(imm;enum="RandMode")---
+308
+309
+310 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+311 b(imm;enum="ResampleMode")---
+312 U(enum="ScrollMode")U(enum="ScrollMode")
+313 U(enum="ResolutionMode")
+314 U(enum="bool") ## U(enum="BitBool")
+315 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+316
+317
+
+## Section E
+400 fff
+401 fff
+402 ff
+403 C
+404 CCC
+405 C
+406 CCC
+407 SU(imm;enum="InterpMode")fff
+408 Sb(imm;enum="InterpMode")---CCC
+409 Sb(imm;enum="InterpMode")---C
+410 SU(imm;enum="InterpMode")fff
+411 SU(imm;enum="InterpMode")f
+412 Sb(imm;enum="InterpMode")---ff
+413 Sb(imm;enum="InterpMode")---CCC
+414 Sb(imm;enum="InterpMode")---C
+415 fff
+416 ff
+417 b(imm;hex)---S
+418
+419 U(enum="bool") ## U(enum="BitBool")
+420 Sfffffffff
+421 b(imm;enum="AnchorModeX")-b(imm;enum="AnchorModeY")-
+422
+423 b(imm;enum="ColorMode")---
+424 b(imm;enum="bool")---
+425 f
+426 f
+427 SU(imm;enum="InterpMode")f
+428 SU(imm;enum="InterpMode")f
+429 ff
+430 Sb(imm;enum="InterpMode")---ff
+431 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+432 U(enum="bool") ## U(enum="BitBool")
+433 SU(imm;enum="InterpMode")ff
+434 ff
+435 Sb(imm;enum="InterpMode")---ff
+436 ff
+437 U(enum="RotationMode")
+438 b(imm;enum="OriginMode")---
+439 b(imm;enum="bool")---f(imm)f(imm) ## b(imm;enum="BitBool")---f(imm)f(imm)
+
+## Section F
+500 N
+501 N
+502 N
+503 N
+504 N
+505 Nff
+506 Nff
+507 U(enum="bool") ## U(enum="BitBool")
+508 U(enum="EffectID")
+509
+
+## Section G
+600 U
+601 U
+602 U
+603 ff
+604 fS
+605 fS
+606 ff
+607 ff
+608 ff
+609 U
+610 U
+611 ffS
+612 ff
+613 ff
+614 ff
+
+!gvar_names
+10000 I0
+10001 I1
+10002 I2
+10003 I3
+10004 F0
+10005 F1
+10006 F2
+10007 F3
+10008 IC0
+10009 IC1
+10010 RAND_ANGLE
+10011 RAND_FLOAT
+10012 RAND_FLOAT_SIGNED
+10013 SELF_X
+10014 SELF_Y
+10015 SELF_Z
+10016 CAMERA_POS_X
+10017 CAMERA_POS_Y
+10018 CAMERA_POS_Z
+10019 CAMERA_FACING_X
+10020 CAMERA_FACING_Y
+10021 CAMERA_FACING_Z
+10022 RAND_UINT
+10023 SELF_X_ROT
+10024 SELF_Y_ROT
+10025 SELF_Z_ROT
+10026 __ROOT_VM_Z_ROT
+10027 RAND_SCALE
+10028 RAND_ANGLE_SCALE
+10029 RAND_UINT_RANGE
+10030 RAND_ANGLE_REPLAY
+10031 RAND_FLOAT_REPLAY
+10032 RAND_FLOAT_SIGNED_REPLAY
+10033 __UNKNOWN_X
+10034 __UNKNOWN_Y
+10035 __UNKNOWN_Z
+# ZANM
+10036 PLAYER_POWER
+
+!gvar_types
+10000 $
+10001 $
+10002 $
+10003 $
+10004 %
+10005 %
+10006 %
+10007 %
+10008 $
+10009 $
+10010 %
+10011 %
+10012 %
+10013 %
+10014 %
+10015 %
+10016 %
+10017 %
+10018 %
+10019 %
+10020 %
+10021 %
+10022 $
+10023 %
+10024 %
+10025 %
+10026 %
+10027 %
+10028 %
+10029 $
+10030 %
+10031 %
+10032 %
+10033 %
+10034 %
+10035 %
+10036 $
+
+!ins_intrinsics
+5 Interrupt()
+100 AssignOp(op="=";type="int")
+101 AssignOp(op="=";type="float")
+102 AssignOp(op="+=";type="int")
+103 AssignOp(op="+=";type="float")
+104 AssignOp(op="-=";type="int")
+105 AssignOp(op="-=";type="float")
+106 AssignOp(op="*=";type="int")
+107 AssignOp(op="*=";type="float")
+108 AssignOp(op="/=";type="int")
+109 AssignOp(op="/=";type="float")
+110 AssignOp(op="%=";type="int")
+111 AssignOp(op="%=";type="float")
+112 BinOp(op="+";type="int")
+113 BinOp(op="+";type="float")
+114 BinOp(op="-";type="int")
+115 BinOp(op="-";type="float")
+116 BinOp(op="*";type="int")
+117 BinOp(op="*";type="float")
+118 BinOp(op="/";type="int")
+119 BinOp(op="/";type="float")
+120 BinOp(op="%";type="int")
+121 BinOp(op="%";type="float")
+124 UnOp(op="sin";type="float")
+125 UnOp(op="cos";type="float")
+126 UnOp(op="tan";type="float")
+127 UnOp(op="acos";type="float")
+128 UnOp(op="atan";type="float")
+200 Jmp()
+201 CountJmp(op=">")
+202 CondJmp(op="==";type="int")
+203 CondJmp(op="==";type="float")
+204 CondJmp(op="!=";type="int")
+205 CondJmp(op="!=";type="float")
+206 CondJmp(op="<";type="int")
+207 CondJmp(op="<";type="float")
+208 CondJmp(op="<=";type="int")
+209 CondJmp(op="<=";type="float")
+210 CondJmp(op=">";type="int")
+211 CondJmp(op=">";type="float")
+212 CondJmp(op=">=";type="int")
+213 CondJmp(op=">=";type="float")
+
+!enum(name="InterpMode")
+0 Linear
+1 AccelerateSlow
+2 Accelerate
+3 AccelerateFast
+4 DecelerateSlow
+5 Decelerate
+6 DecelerateFast
+7 ConstantVelocity
+8 Bezier
+9 AccelDecelSlow
+10 AccelDecel
+11 AccelDecelFast
+12 DecelAccelSlow
+13 DecelAccel
+14 DecelAccelFast
+15 Initial
+16 Final
+17 ConstantAccel
+18 DecelerateSine
+19 AccelerateSine
+20 DecelAccelSine
+21 AccelDecelSine
+22 __AccelParabolaA
+23 __AccelParabolaB
+24 __AccelParabolaC
+25 __AccelParabolaD
+26 __AccelParabolaE
+27 __DecelParabolaA
+28 __DecelParabolaB
+29 __DecelParabolaC
+30 __DecelParabolaD
+31 __DecelParabolaE
+
+!enum(name="RenderMode")
+0 RenderMode0	# Normal
+1 RenderMode1	# Normal
+2 RenderMode2	# Normal
+3 RenderMode3	# Normal
+4 RenderMode4	# Normal
+5 RenderMode5	# Normal
+6 RenderMode6	# Normal
+7 RenderMode7	# Normal
+8 RenderMode8	# Normal
+9 TexturedRing
+10 RenderMode10	# SPECIAL
+11 RenderMode11	# 
+12 RenderMode12	# 
+13 TexturedArcA
+14 TexturedArcB
+15 RenderMode15	# Normal (RenderMode8 with fog)
+16 PolygonRectangle # [TRIANGLESTRIP x 2, ZWRITE = False]
+17 Polygon # [TRIANGLEFAN x I0, ZWRITE = False, ZFUNC = CmpAlways]
+18 PolygonHollow # [LINESTRIP x I0]
+19 PolygonRing # [TRIANGLESTRIP x I0 * 2]
+20 PolygonRectangleGradient # [TRIANGLESTRIP x 2, ZWRITE = False]
+21 PolygonRectangleAntialias # [TRIANGLESTRIP x 2, ZWRITE = False]
+22 PolygonRectangleGradientAntialias # [TRIANGLESTRIP x 2, ZWRITE = False]
+23 RenderMode23	# 
+24 TexturedCylinder
+25 TexturedRing3D
+26 PolygonLine # [LINESTRIP x 1, ZWRITE = False]
+27 PolgonRectangleHollow # [LINESTRIP x 4, ZWRITE = False]
+28 __PolygonUnknownA # [TRIANGLESTRIP x 1, ZWRITE = False]
+
+!enum(name="BlendMode")
+0 Normal
+1 Additive
+2 BlendMode2
+3 BlendMode3
+4 BlendMode4
+5 BlendMode5
+6 BlendMode6
+7 BlendMode7
+8 BlendMode8
+9 BlendMode9
+10 BlendMode10
+11 BlendMode11
+
+!enum(name="RandMode")
+0 ReplayRNG
+1 AnimationRNG
+
+!enum(name="ResampleMode")
+0 LinearInterp
+1 NearestPoint
+
+!enum(name="ScrollMode")
+0 Wrap
+1 Clamp
+2 Mirror
+
+!enum(name="ResolutionMode")
+0 ResolutionMode0
+1 ResolutionMode1
+2 ResolutionMode2
+3 ResolutionMode3
+4 ResolutionMode4
+5 ResolutionMode5
+6 ResolutionMode6
+
+!enum(name="AnchorModeX")
+0 Center
+1 Left
+2 Right
+
+!enum(name="AnchorModeY")
+0 Center
+1 Top
+2 Bottom
+
+!enum(name="ColorMode")
+0 ColorOnly
+1 GradientColorOnly
+2 HorizontalGradient
+3 VerticalGradient
+4 ColorMode4
+
+!enum(name="RotationMode")
+0 XYZ
+1 XZY
+2 YXZ
+3 YZX
+4 ZXY
+5 ZYX
+6 None
+
+!enum(name="OriginMode")
+0 OriginMode0
+1 OriginMode1
+2 OriginMode2
+
+# WORLD_LAYER_COUNT 37
+# WORLD_LAYER_COUNT 24
+# WORLD_LAYER_B_COUNT 13
+# UI_LAYER_COUNT 9
+!enum(name="AnmLayerIndex")
+# Layers 0-2 set OriginMode0
+0 Layer0
+1 Layer1
+2 Layer2
+
+# Layers 3-19 set OriginMode1
+3 Layer3 # Enables fog
+4 Layer4
+5 Layer5
+6 Layer6
+7 Layer7
+8 Layer8
+9 Layer9
+10 Layer10
+11 Layer11
+12 Layer12
+13 Layer13
+14 Layer14
+15 Layer15
+16 Layer16
+17 Layer17
+18 Layer18
+19 Layer19
+
+# Layers 20-23 set OriginMode2
+# Layers 20-32 set ResolutionMode1
+20 Layer20 # Disables zwrite
+21 Layer21
+22 Layer22
+23 Layer23 # Disables zwrite
+24 Layer24 # Disables zwrite
+25 Layer25
+26 Layer26
+27 Layer27
+28 Layer28
+29 Layer29
+30 Layer30
+31 Layer31
+32 Layer32
+
+33 StageLayer0 # ZFUNC = D3DCMP_ALWAYS
+34 StageLayer1 # ZFUNC = D3DCMP_LESSEQAUL
+35 SupervisorLayer0
+# 36 doesn't seem to exist?
+
+# UI Layers set ResolutionMode1
+37 UILayer0 # Disables zwrite
+38 UILayer1
+39 UILayer2
+40 UILayer3
+41 UILayer4 # Renders twice?
+42 UILayer5
+43 UILayer6
+44 UILayer7
+45 UILayer8
+
+!enum(name="EffectID")
+0 Effect0
+1 Effect1
+2 Effect2
+3 Effect3
+4 Effect4

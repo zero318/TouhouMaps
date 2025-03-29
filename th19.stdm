@@ -22,6 +22,9 @@
 16 interrupt_label
 17 distortion
 18 camera_rotation_interp
+19 __anm_interrupt_all
+20 __draw_distance
+21 camera_fov_interp
 
 !ins_signatures
 0
@@ -38,10 +41,13 @@
 11 S_fffffffff
 12 b(enum="ShakingMode")---
 13 C
-14 S(enum="BackgroundSlot")N
+14 S(enum="BackgroundSlot")N # Special behaviors: -2 sets the VM to be invisible and -1 ends the script
 16 S(imm)
 17 S(enum="DistortionMode")
 18 SU(enum="InterpMode")fff
+19 S
+20 f
+21 SU(enum="InterpMode")f
 
 !ins_intrinsics
 1 Jmp()
@@ -66,16 +72,34 @@
 15 Initial
 16 Final
 17 ConstantAccel
+18 DecelerateSine
+19 AccelerateSine
+20 DecelAccelSine
+21 AccelDecelSine
+22 __AccelParabolaA
+23 __AccelParabolaB
+24 __AccelParabolaC
+25 __AccelParabolaD
+26 __AccelParabolaE
+27 __DecelParabolaA
+28 __DecelParabolaB
+29 __DecelParabolaC
+30 __DecelParabolaD
+31 __DecelParabolaE
 
 !enum(name="ShakingMode")
 0 Disable
 1 ShakingMode1
 2 ShakingMode2
-3 ShakingMode3 ## These 2 possibly do nothing?
-4 ShakingMode4 ##
+3 ShakingMode3 
+4 ShakingMode4
 5 ShakingMode5
 6 ShakingMode6
-7 ShakingMode7
+7 ShakingMode7 ## These 2 possibly do nothing?
+8 ShakingMode8 ##
+9 ShakingMode9
+10 ShakingMode10
+11 ShakingMode11
 
 !enum(name="BackgroundSlot")
 0 BackgroundSlot0

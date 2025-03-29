@@ -113,10 +113,10 @@
 334 __effect_create_special
 335 anm_scale2_slot
 336 __anm_layer_slot
-337 __anm_blend_mode_slot
+337 anm_blend_mode_slot
 338 anm_create_rel_front_rotated
 339 effect_create
-340 __enemy_flag_unknown
+340 __enemy_id_set_flag_unknown_A
 
 ## Section C
 400 move_position_abs
@@ -155,10 +155,10 @@
 433 move_to_enemy_id_rel
 434 __move_curve_abs
 435 __move_curve_rel
-436 __move_position_abs_interp_2
-437 __move_position_rel_interp_2
-438 __move_curve_add_abs
-439 __move_curve_add_rel
+436 __move_position_offset_abs_interp
+437 __move_position_offset_rel_interp
+438 __move_curve_offset_abs
+439 __move_curve_offset_rel
 440 move_angle_abs
 441 move_angle_abs_interp
 442 move_angle_rel
@@ -224,12 +224,12 @@
 552 anm_layer_base
 553 __enemy_damage_sound
 554 __stage_logo
-555 __enemy_id_exists
+555 enemy_id_exists
 556 death_callback_sub
 557 std_fog_interp
 558 enemy_flag_mirror2
 559 enemy_limit_set
-560 __bullet_bounce_bounds_set
+560 bullet_bounce_bounds_set
 561 __enemy_kill_effect_create
 562 drop_item_rewards_force
 563 enemy_flag_hitbox_shape
@@ -274,13 +274,13 @@
 625 bullet_count_difficulty
 626 shoot_offset_circle
 627 shoot_spawn_distance
-628 __shoot_unknown_A
+628 __shoot_origin
 629 enemy_fog_spawn
 630 std_interrupt
 631 __enemy_manager_flag_unknown_A
 632 ex_ins_repeat
-633 __enemy_damage_ex
-634 __enemy_hitbox_ex
+633 enemy_damage_ex
+634 enemy_hitbox_ex
 635 bullet_cancel_weak_radius
 636 bullet_clear_weak_radius
 637 ex_ins_call
@@ -308,10 +308,15 @@
 
 ## Section G
 800 enemy_id_change_sub
-801 enemy_id_get_position_crash
+801 enemy_id_get_position_crash ## Use 324 instead!
 802 boss_callback
 
 ## Section H
+901 __debug_unknown_C
+902 __debug_unknown_D
+
+## Section I
+1001 __globals_flag_unknown_A
 
 !ins_signatures
 0
@@ -541,7 +546,7 @@
 700 S
 
 !gvar_names
--10000 RAND_UINT
+-10000 RAND_INT
 -9999 RAND_FLOAT
 -9998 RAND_ANGLE
 -9997 SELF_X
@@ -556,14 +561,14 @@
 -9988 BOSS_TIMER
 -9987 RAND_FLOAT_SIGNED
 -9986 SPELL_TIMEOUT
--9985 I0
--9984 I1
--9983 I2
--9982 I3
--9981 F0
--9980 F1
--9979 F2
--9978 F3
+-9985 EI0
+-9984 EI1
+-9983 EI2
+-9982 EI3
+-9981 EF0
+-9980 EF1
+-9979 EF2
+-9978 EF3
 -9977 SELF_X2
 -9976 SELF_Y2
 -9975 SELF_X2_ABS
@@ -580,10 +585,10 @@
 -9964 PLAYER_Y2
 -9963 BOSS0_X
 -9962 BOSS0_Y
--9961 ANM_SLOT0_ID
+-9961 ANM_SLOT0_SCRIPT_ID
 -9960 RANK
 -9959 DIFFICULTY
--9958 SELF_ANGLE
+-9958 SELF_ORBIT
 -9957 TRUE_VAR
 -9956 PLAYER_ANGLE_ABS
 -9955 PLAYER_ANGLE_REL
@@ -594,24 +599,55 @@
 -9950 LUNATIC
 -9949 PLAYER_DEATHS
 -9948 PLAYER_BOMBS_USED
--9947 __ENEMY_MANAGER_UNKNOWN_A
--9946 __ENEMY_MANAGER_UNKNOWN_B
+-9947 SPELL_CAPTURE
+-9946 ENEMY_COUNT
 -9945 PLAYER_SHOT
 -9944 PLAYER_DISTANCE
--9943 BOSS0_I0
--9942 BOSS0_I1
--9941 BOSS0_I2
--9940 BOSS0_I3
--9939 BOSS0_F0
--9938 BOSS0_F1
--9937 BOSS0_F2
--9936 BOSS0_F3
--9935 F4
--9934 F5
--9933 F6
--9932 F7
+-9943 BOSS0_EI0
+-9942 BOSS0_EI1
+-9941 BOSS0_EI2
+-9940 BOSS0_EI3
+-9939 BOSS0_EF0
+-9938 BOSS0_EF1
+-9937 BOSS0_EF2
+-9936 BOSS0_EF3
+-9935 EF4
+-9934 EF5
+-9933 EF6
+-9932 EF7
 -9931 PREV_ENEMY_ID
 -9930 PLAYER_POWER
+
+-9927 __REPLAY_UNKNOWN_A
+-9926 GI0
+-9925 GI1
+-9924 GI2
+-9923 GI3
+-9922 GF0
+-9921 GF1
+-9920 GF2
+-9919 GF3
+-9918 GF4
+-9917 GF5
+-9916 GF6
+-9915 GF7
+-9914 SELF_ENEMY_ID
+#-9913 PHOTOS_TAKEN
+#-9912 __PLAYER_UNKNOWN_C
+-9911 BOSS0_ORBIT
+-9910 BOSS0_SPEED_ABS
+-9909 PARENT_ENEMY_ID
+-9908 ENEMY_COUNT_KILLABLE
+-9907 SPELL_ID
+-9906 SELF_MIRROR
+-9905 CHAPTER
+-9904 PLAYER_DEATHS_GLOBAL
+#-9903
+-9902 __BULLET_MANAGER_UNKNOWN_B
+#-9901
+#-9900
+-9899 ACHIEVEMENT_MODE
+-9898 __BULLET_COUNT_UNKNOWN_A
 
 -1 STACK_TOP
 0 LOCAL_A

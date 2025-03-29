@@ -355,19 +355,18 @@
 1039 __enemy_flag_unknown_D
 1040 __ghost_flags_unknown_B
 1041 __enemy_flag_unknown_E
-1042 __ghost_flags_unknown_C
 # ZECL
-1043 set_int_card_count
-1044 set_int_opposite_card_count
-1045 player_add_lives
-1046 opposite_player_add_lives
-1047 player_add_bombs
-1048 opposite_player_add_bombs
-1049 player_add_life_fragments
-1050 opposite_player_add_life_fragments
-1051 player_add_bomb_fragments
-1052 opposite_player_add_bomb_fragments
-1053 drop_game_side
+1042 set_int_card_count
+1043 set_int_opposite_card_count
+1044 player_add_lives
+1045 opposite_player_add_lives
+1046 player_add_bombs
+1047 opposite_player_add_bombs
+1048 player_add_life_fragments
+1049 opposite_player_add_life_fragments
+1050 player_add_bomb_fragments
+1051 opposite_player_add_bomb_fragments
+1052 drop_game_side
 
 !ins_signatures
 ## Section A
@@ -720,10 +719,10 @@
 1039 S
 1040 S
 1041 S
-1042 S
 # ZECL
+1042 Sz
 1043 Sz
-1044 Sz
+1044 S
 1045 S
 1046 S
 1047 S
@@ -732,7 +731,6 @@
 1050 S
 1051 S
 1052 S
-1053 S
 
 !gvar_names
 -10000 RAND_INT
