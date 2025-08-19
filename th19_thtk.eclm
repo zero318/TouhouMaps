@@ -112,8 +112,8 @@
 319 anm_rotate_slot
 320 anm_move_position_slot
 321 __enemy_create_rel_2
-322 __anm_set_slot_indirect
-323 __anm_death_effects
+322 __anm_set_slot_anchor_index
+323 anm_death_effects
 324 enemy_id_get_position
 325 anm_color_slot
 326 anm_color_slot_interp
@@ -128,8 +128,8 @@
 335 anm_scale2_slot
 336 __anm_layer_slot
 337 anm_blend_mode_slot
-338 __anm_create_rel_front_rotated
-339 effect_create
+338 anm_create_rel_front_rotated
+339 __anm_create_zero_front_and_run
 340 __enemy_id_set_flag_unknown_A
 
 ## Section C
@@ -675,7 +675,7 @@
 714 SS
 
 ## Section G
-800 S
+800 Sz
 801 ffS
 802 S
 

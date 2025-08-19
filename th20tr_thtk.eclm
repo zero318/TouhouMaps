@@ -78,16 +78,6 @@
 96 __math_angle_96
 97 __math_angle_97
 # ZECL
-98 debug_breakpoint
-99 thcrap_expr
-100 math_shl
-101 math_shr
-102 math_sar
-103 math_rol
-104 math_ror
-105 math_udiv
-106 math_umod
-107 thcrap_print
 
 ## Section B
 300 enemy_create_rel
@@ -112,8 +102,8 @@
 319 anm_rotate_slot
 320 anm_move_position_slot
 321 __enemy_create_rel_2
-322 __anm_set_slot_indirect
-323 __anm_death_effects
+322 __anm_set_slot_anchor_index
+323 anm_death_effects
 324 enemy_id_get_position
 325 anm_color_slot
 326 anm_color_slot_interp
@@ -128,9 +118,13 @@
 335 anm_scale2_slot
 336 __anm_layer_slot
 337 anm_blend_mode_slot
-338 __anm_create_rel_front_rotated
-339 effect_create
+338 anm_create_rel_front_rotated
+339 __anm_create_zero_front_and_run
 340 __enemy_id_set_flag_unknown_A
+341 __enemy_flag_set_unknown_F
+342 __enemy_flag_clear_unknown_F
+343 __enemy_flag_unknown_G
+344 __enemy_id_exists2
 
 ## Section C
 400 move_position_abs
@@ -231,7 +225,7 @@
 545 enemy_kill_all_id
 546 anm_layer_base
 547 __enemy_damage_sound
-548 nop548
+548 stage_logo
 549 enemy_id_exists
 550 death_callback_sub
 551 std_fog_interp
@@ -252,9 +246,11 @@
 566 __enemy_life_set_current
 567 item_timed_bonus_slot_set
 568 item_timed_bonus_duration
-569 __math_unknown_A
+569 nop569
 570 set_int_difficulty_ex
 571 set_float_difficulty_ex
+572 __item_reward_override
+573 __enemy_kill_all_unknown
 
 ## Section E
 600 shooter_reset
@@ -284,7 +280,7 @@
 624 ex_ins_repeat
 625 enemy_damage_ex
 626 enemy_hitbox_ex
-627 bullet_cancel_weak_radius ## Not removed, but same as 628
+627 bullet_cancel_weak_radius
 628 bullet_clear_weak_radius
 629 ex_ins_call
 630 score_add
@@ -319,54 +315,9 @@
 902 __debug_unknown_D
 
 ## Section I
-1002 __store_open
-1004 __wave_number_set
-1005 __wave_number_inc
-1007 difficulty_set
-1008 difficulty_reset
-1009 __wave_reset_unknown_A
-1010 __wave_reset_unknown_B
-1011 __wave_weight_set
-1012 __wave_spawn
-1013 __write_int_array
-1014 __write_float_array
-1015 __read_int_array_by_difficulty
-1016 __read_float_array_by_difficulty
-1017 __story_clear
-1018 __enemy_manager_set_unknown_timer_A
-1019 __pause_unknown_A
-1020 __set_enemy_manager_unknown_F_var
-1021 __wave_set_WI0_data
-1022 music
-1023 __item_manager_unknown_int_A_set
-1026 __item_manager_unknown_int_A_average
-1027 __ghost_flags_unknown_A
-1028 __ghost_set_unknown_A
-1029 __ghost_set_unknown_B
-1030 __ghost_set_unknown_C
-1031 __ghost_set_unknown_D
-1032 __ghost_set_unknown_E
-1033 __ghost_set_unknown_F
-1034 difficulty_set_to_opposite_ex_attack_level
-1035 difficulty_set_to_opposite_boss_attack_level
-1036 __opposite_player_game_over
-1037 opposite_spawn_ex_attack
-1038 __enemy_flag_unknown_C
-1039 __enemy_flag_unknown_D
-1040 __ghost_flags_unknown_B
-1041 __enemy_flag_unknown_E
-# ZECL
-1042 set_int_card_count
-1043 set_int_opposite_card_count
-1044 player_add_lives
-1045 opposite_player_add_lives
-1046 player_add_bombs
-1047 opposite_player_add_bombs
-1048 player_add_life_fragments
-1049 opposite_player_add_life_fragments
-1050 player_add_bomb_fragments
-1051 opposite_player_add_bomb_fragments
-1052 drop_game_side
+1001 __stone_enemy_spawn
+1002 __enemy_manager_set_unknown_F
+1003 __stone_value_set
 
 !ins_signatures
 ## Section A
@@ -443,16 +394,6 @@
 96 ff
 97 ff
 # ZECL
-98
-99 Sz
-100
-101
-102
-103
-104
-105
-106
-107 m*D
 
 ## Section B
 300 mffSSS
@@ -495,6 +436,10 @@
 338 SSfff
 339 SSS
 340 S
+341
+342
+343 S
+344 SS
 
 ## Section C
 400 ff
@@ -595,7 +540,7 @@
 545 S
 546 S
 547 S
-#548
+548
 549 SS
 550 m
 551 SSSff
@@ -616,9 +561,11 @@
 566 S
 567 SS
 568 S
-569 fffff
+#569
 570 SSSSSSSSS
 571 fffffffff
+572 S
+573
 
 ## Section E
 600 S
@@ -683,54 +630,9 @@
 902
 
 ## Section I
-1002
-1004 S
-1005
-1007 S
-1008
-1009
-1010
-1011 SS
-1012 S
-1013 SSSSSSSSS
-1014 Sffffffff
-1015 SS
-1016 fS
-1017
-1018 S
-1019
-1020 S
-1021 SS
-1022 S
-1023 S
-1026 S
-1027 S
-1028 f
-1029 S
-1030 S
-1031 S
-1032 S
-1033 S
-1034
-1035
-1036
-1037 ff
-1038 S
-1039 S
-1040 S
-1041 S
-# ZECL
-1042 Sz
-1043 Sz
-1044 S
-1045 S
-1046 S
-1047 S
-1048 S
-1049 S
-1050 S
-1051 S
-1052 S
+1001 S
+1002 S
+1003 S
 
 !gvar_names
 -10000 RAND_INT
@@ -845,33 +747,16 @@
 #-9891 __ABILITY_MANAGER_UNKNOWN_A
 #-9890
 -9889 __ENEMY_COUNT_UNKNOWN_FLAG_D
--9888 __GLOBAL_SIDE_UNKNOWN_A
+#-9888 __GLOBAL_SIDE_UNKNOWN_A
 -9887 STORY_BOSS_DIFFICULTY
 -9886 STORY_BOSS_FINAL_PHASE
 -9885 DIFFICULTY_GLOBAL
 -9884 OPPOSITE_PLAYER_X
 -9883 OPPOSITE_PLAYER_Y
 -9882 SELF_GAME_SIDE
+-9881 UNKNOWN_A
 # ZECL
--9881 OPPOSITE_PLAYER_SHOT
--9880 OPPOSITE_PLAYER_POWER
--9879 OPPOSITE_PLAYER_DEATHS
--9878 OPPOSITE_PLAYER_BOMBS_USED
--9877 PLAYER_LIVES
--9876 OPPOSITE_PLAYER_LIVES
--9875 PLAYER_BOMBS
--9874 OPPOSITE_PLAYER_BOMBS
--9873 PLAYER_STATE
--9872 OPPOSITE_PLAYER_STATE
--9871 PLAYER_BARRIER_STATE
--9870 OPPOSITE_PLAYER_BARRIER_STATE
--9869 PLAYER_FLAGS
--9868 OPPOSITE_PLAYER_FLAGS
--9867 PLAYER_LIFE_FRAGMENTS
--9866 OPPOSITE_PLAYER_LIFE_FRAGMENTS
--9865 PLAYER_BOMB_FRAGMENTS
--9864 OPPOSITE_PLAYER_BOMB_FRAGMENTS
--9863 OPPOSITE_GAME_SIDE
+
 
 !gvar_types
 -10000 $
@@ -986,30 +871,12 @@
 #-9891 $
 #-9890 $
 -9889 $
--9888 %
+#-9888 %
 -9887 $
 -9886 $
 -9885 $
 -9884 %
 -9883 %
 -9882 $
-# ZECL
 -9881 $
--9880 $
--9879 $
--9878 $
--9877 $
--9876 $
--9875 $
--9874 $
--9873 $
--9872 $
--9871 $
--9870 $
--9869 $
--9868 $
--9867 $
--9866 $
--9865 $
--9864 $
--9863 $
+# ZECL

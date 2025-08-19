@@ -127,6 +127,7 @@
 438 origin_mode
 439 camera_fade
 440 scale_unflip
+441 move_position2
 
 ## Section F
 500 anm_create_child_back
@@ -175,6 +176,8 @@
 630 __polygon_unknown_L1
 631 __polygon_unknown_L2
 632 __polygon_unknown_L3
+633 __polygon_unknown_M
+634 __polygon_unknown_N
 
 !ins_signatures
 ## Section A
@@ -301,6 +304,7 @@
 438 b(imm;enum="OriginMode")---
 439 b(imm;enum="bool")---f(imm)f(imm) ## b(imm;enum="BitBool")---f(imm)f(imm)
 440
+441 fff
 
 ## Section F
 500 N
@@ -349,6 +353,8 @@
 630 ffS
 631 ffS
 632 ffS
+633 S
+634 f
 
 !gvar_names
 10000 I0
@@ -564,15 +570,12 @@
 7 BlendMode7
 8 BlendMode8
 9 BlendMode9
-10 BlendMode10
-11 BlendMode11
 
 !enum(name="RandMode")
 0 ReplayRNG
 1 AnimationRNG
 
 !enum(name="ResampleMode")
--1 ResampleModeN1
 0 LinearInterp
 1 NearestPoint
 
@@ -621,77 +624,7 @@
 1 OriginMode1
 2 OriginMode2
 
-# WORLD_LAYER_COUNT 44
-# WORLD_LAYER_COUNT 29
-# WORLD_LAYER_B_COUNT 15
-# UI_LAYER_COUNT 8
 !enum(name="AnmLayerIndex")
-# Layers 0-2 set OriginMode0
-0 Layer0
-1 Layer1
-2 Layer2
 
-# Layers 3-19 set OriginMode1
-3 Layer3 # Sets ANM_MANAGER_PTR->__int_71C = -1
-4 Layer4
-5 Layer5
-6 Layer6 # Sets ANM_MANAGER_PTR->__int_71C = -1
-7 Layer7
-8 Layer8
-9 Layer9
-10 Layer10
-11 Layer11
-12 Layer12 # Sets ANM_MANAGER_PTR->__int_71C = -1
-13 Layer13
-14 Layer14
-15 Layer15
-16 Layer16
-17 Layer17
-18 Layer18
-19 Layer19
-
-# Layers 20+ set OriginMode2
-# Layers 20-36 set ResolutionMode1 unless a flag is set
-20 Layer20 # Sets ANM_MANAGER_PTR->__int_71C = -1
-21 Layer21
-22 Layer22
-23 Layer23
-24 Layer24 # Sets ANM_MANAGER_PTR->__int_71C = -1
-25 Layer25
-26 Layer26 # Sets ANM_MANAGER_PTR->__int_71C = -1
-27 Layer27 # Sets ANM_MANAGER_PTR->__int_71C = -1
-28 Layer28
-29 Layer29
-30 Layer30
-31 Layer31
-32 Layer32
-33 Layer33
-34 Layer34
-35 Layer35
-36 Layer36
-
-37 StageLayer0 # ZFUNC = D3DCMP_ALWAYS
-38 StageLayer1 # ZFUNC = D3DCMP_LESSEQAUL
-39 SupervisorLayer0
-40 SupervisorLayer1
-# 41 and 42 don't seem to exist?
-43 Layer43 # Sets ANM_MANAGER_PTR->__int_71C = -1
-
-# UI Layers set ResolutionMode1 unless a flag is set
-44 UILayer0
-45 UILayer1
-46 UILayer2
-47 UILayer3
-48 UILayer4
-49 UILayer5
-50 UILayer6
-51 UILayer7
 
 !enum(name="EffectID")
-0 Effect0
-1 Effect1
-2 Effect2
-3 Effect3
-4 Effect4
-5 Effect5
-6 Effect6
