@@ -153,12 +153,12 @@
 431 move_velocity_no_mirror_rel_interp
 432 move_to_enemy_id_abs
 433 move_to_enemy_id_rel
-434 __move_curve_abs
-435 __move_curve_rel
+434 move_axis_interp_abs
+435 move_axis_interp_rel
 436 __move_position_offset_abs_interp
 437 __move_position_offset_rel_interp
-438 __move_curve_offset_abs
-439 __move_curve_offset_rel
+438 __move_axis_offset_abs_interp
+439 __move_axis_offset_rel_interp
 440 move_angle_abs
 441 move_angle_abs_interp
 442 move_angle_rel
