@@ -80,8 +80,10 @@
 313 resolution_mode
 314 anm_flag_inherit_rotation
 315 anm_flag_color_children
-316 __anm_flag_set_unknown_J
-317 __anm_flag_clear_unknown_J
+316 __anm_flag_set_visible2
+317 __anm_flag_clear_visible2
+318 __anm_flag_unknown_V
+319 __sprite_set_unknown
 
 ## Section E
 400 move_position
@@ -103,7 +105,7 @@
 416 scale_speed
 417 alpha_interp_linear
 418 sprite_window
-419 __anm_flag_unknown_Q
+419 __anm_flag_continual_sprite_window
 420 move_bezier
 421 anchor_mode
 422 position_inherit
@@ -124,6 +126,8 @@
 437 rotation_mode
 438 origin_mode
 439 camera_fade
+440 scale_unflip
+441 move_position2
 
 ## Section F
 500 anm_create_child_back
@@ -133,9 +137,10 @@
 504 anm_create_back
 505 anm_create_child_back_rel
 506 anm_create_back_rel
-507 __anm_flag_use_root_vm_slowdown
+507 __anm_flag_treat_as_root
 508 effect_create
 509 copy_parent_context
+510 anm_create_child_front_rel
 
 ## Section G
 600 textured_ring
@@ -153,6 +158,26 @@
 612 polygon_rectangle_hollow
 613 polygon_line
 614 __polygon_unknown_A
+615 __polygon_ring_unknown_A
+616 __polygon_ring_unknown_B
+617 __polygon_unknown_C
+618 __polygon_unknown_D
+619 __polygon_unknown_E
+620 __polygon_unknown_F1
+621 __polygon_unknown_F2
+622 __polygon_unknown_F3
+623 __polygon_unknown_G
+624 __polygon_unknown_H
+625 __polygon_unknown_I1
+626 __polygon_unknown_I2
+627 __polygon_unknown_I3
+628 __polygon_unknown_J
+629 __polygon_unknown_K
+630 __polygon_unknown_L1
+631 __polygon_unknown_L2
+632 __polygon_unknown_L3
+633 __polygon_unknown_M
+634 __polygon_unknown_N
 
 !ins_signatures
 ## Section A
@@ -227,13 +252,15 @@
 308
 309
 310 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
-311 b(imm;enum="ResampleMode")---
+311 c(imm;enum="ResampleMode")---
 312 U(enum="ScrollMode")U(enum="ScrollMode")
 313 U(enum="ResolutionMode")
 314 U(enum="bool") ## U(enum="BitBool")
 315 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
 316
 317
+318 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
+319 nnnn
 
 ## Section E
 400 fff
@@ -276,6 +303,8 @@
 437 U(enum="RotationMode")
 438 b(imm;enum="OriginMode")---
 439 b(imm;enum="bool")---f(imm)f(imm) ## b(imm;enum="BitBool")---f(imm)f(imm)
+440
+441 fff
 
 ## Section F
 500 N
@@ -288,6 +317,7 @@
 507 U(enum="bool") ## U(enum="BitBool")
 508 U(enum="EffectID")
 509
+510 Nff
 
 ## Section G
 600 U
@@ -305,6 +335,26 @@
 612 ff
 613 ff
 614 ff
+615 ffS
+616 ffS
+617 fS
+618
+619 fS
+620 ffS
+621 ffS
+622 ffS
+623 fffS
+624 fffS
+625 ffffS
+626 ffffS
+627 ffffS
+628 fS
+629 fS
+630 ffS
+631 ffS
+632 ffS
+633 S
+634 f
 
 !gvar_names
 10000 I0
@@ -345,6 +395,14 @@
 10035 __UNKNOWN_Z
 # ZANM
 10036 PLAYER_POWER
+10037 PLAYER_STORY_STONE_COLOR
+10038 PLAYER_WIDE_SHOT_STONE_COLOR
+10039 PLAYER_NARROW_SHOT_STONE_COLOR
+10040 PLAYER_ASSIST_STONE_COLOR
+10041 PLAYER_STORY_STONE
+10042 PLAYER_WIDE_SHOT_STONE
+10043 PLAYER_NARROW_SHOT_STONE
+10044 PLAYER_ASSIST_STONE
 
 !gvar_types
 10000 $
@@ -385,6 +443,14 @@
 10035 %
 # ZANM
 10036 $
+10037 $
+10038 $
+10039 $
+10040 $
+10041 $
+10042 $
+10043 $
+10044 $
 
 !ins_intrinsics
 5 Interrupt()
@@ -494,6 +560,24 @@
 26 PolygonLine # [LINESTRIP x 1, ZWRITE = False]
 27 PolgonRectangleHollow # [LINESTRIP x 4, ZWRITE = False]
 28 __PolygonUnknownA # [TRIANGLESTRIP x 1, ZWRITE = False]
+29 __PolygonRingUnknownA # [TRIANGLESTRIP x I0 * 2]
+30 __PolygonRingUnknownB # [TRIANGLESTRIP x I0 * 2]
+31 __PolygonUnknownC # [TRIANGLEFAN x I0, ZWRITE = False, ZFUNC = CmpAlways]
+32 __PolygonUnknownD # [POINTLIST x 1, ZWRITE = False]
+33 __PolygonUnknownE # [LINESTRIP x I0, ZWRITE = False, ZFUNC = CmpAlways]
+34 __PolygonUnknownF1 # [TRIANGLESTRIP x I0 * 2, ZWRITE = False, ZFUNC = CmpAlways]
+35 __PolygonUnknownF2 # [TRIANGLESTRIP x I0 * 2, ZWRITE = False, ZFUNC = CmpAlways]
+36 __PolygonUnknownF3 # [TRIANGLESTRIP x I0 * 2, ZWRITE = False, ZFUNC = CmpAlways]
+37 __PolygonUnknownG # [TRIANGLESTRIP x I0, ZWRITE = False, ZFUNC = CmpAlways]
+38 __PolygonUnknownH # [LINESTRIP, ZWRITE = False, ZFUNC = CmpAlways]
+39 __PolygonUnknownI1 # [TRIANGLESTRIP x I0 * 2, ZWRITE = False, ZFUNC = CmpAlways]
+40 __PolygonUnknownI2 # [TRIANGLESTRIP x I0 * 2, ZWRITE = False, ZFUNC = CmpAlways]
+41 __PolygonUnknownI3 # [TRIANGLESTRIP x I0 * 2, ZWRITE = False, ZFUNC = CmpAlways]
+42 __PolygonUnknownJ # [TRIANGLEFAN x I0, ZWRITE = False, ZFUNC = CmpAlways]
+43 __PolygonUnknownK # [LINESTRIP x I0]
+44 __PolygonUnknownL1 # [TRIANGLESTRIP x I0 * 2]
+45 __PolygonUnknownL2 # [TRIANGLESTRIP x I0 * 2]
+46 __PolygonUnknownL3 # [TRIANGLESTRIP x I0 * 2]
 
 !enum(name="BlendMode")
 0 Normal
@@ -506,8 +590,6 @@
 7 BlendMode7
 8 BlendMode8
 9 BlendMode9
-10 BlendMode10
-11 BlendMode11
 
 !enum(name="RandMode")
 0 ReplayRNG
@@ -562,70 +644,7 @@
 1 OriginMode1
 2 OriginMode2
 
-# WORLD_LAYER_COUNT 37
-# WORLD_LAYER_COUNT 24
-# WORLD_LAYER_B_COUNT 13
-# UI_LAYER_COUNT 9
 !enum(name="AnmLayerIndex")
-# Layers 0-2 set OriginMode0
-0 Layer0
-1 Layer1
-2 Layer2
 
-# Layers 3-19 set OriginMode1
-3 Layer3 # Enables fog
-4 Layer4
-5 Layer5
-6 Layer6
-7 Layer7
-8 Layer8
-9 Layer9
-10 Layer10
-11 Layer11
-12 Layer12
-13 Layer13
-14 Layer14
-15 Layer15
-16 Layer16
-17 Layer17
-18 Layer18
-19 Layer19
-
-# Layers 20-23 set OriginMode2
-# Layers 20-32 set ResolutionMode1
-20 Layer20 # Disables zwrite
-21 Layer21
-22 Layer22
-23 Layer23 # Disables zwrite
-24 Layer24 # Disables zwrite
-25 Layer25
-26 Layer26
-27 Layer27
-28 Layer28
-29 Layer29
-30 Layer30
-31 Layer31
-32 Layer32
-
-33 StageLayer0 # ZFUNC = D3DCMP_ALWAYS
-34 StageLayer1 # ZFUNC = D3DCMP_LESSEQAUL
-35 SupervisorLayer0
-# 36 doesn't seem to exist?
-
-# UI Layers set ResolutionMode1
-37 UILayer0 # Disables zwrite
-38 UILayer1
-39 UILayer2
-40 UILayer3
-41 UILayer4 # Renders twice?
-42 UILayer5
-43 UILayer6
-44 UILayer7
-45 UILayer8
 
 !enum(name="EffectID")
-0 Effect0
-1 Effect1
-2 Effect2
-3 Effect3
-4 Effect4
