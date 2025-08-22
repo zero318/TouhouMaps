@@ -1,8 +1,149 @@
 !anmmap
 
 # mappings from zero318
+# compatibility mappings from ExpHP
 
 !ins_names
+## Even older names from Bravi's cursed map
+## REALLY DON'T USE THESE THEY SUCK
+1 end
+5 case
+410 rotateTimeEx
+421 anchor
+500 createScript
+501 createScript2
+502 createScript3
+503 createScript4
+504 createScript5
+604 drawStar
+605 drawStarBorder
+606 drawRect2
+607 drawRect3
+608 drawRect4
+
+## Compatibility names from ExpHP
+## PLEASE DON'T USE THESE
+1 delete
+2 static
+3 stop
+4 stopHide
+5 interruptLabel
+7 caseReturn
+100 iset
+101 fset
+102 iadd
+103 fadd
+104 isub
+105 fsub
+106 imul
+107 fmul
+108 idiv
+109 fdiv
+110 imod
+111 fmod
+112 isetAdd
+113 fsetAdd
+114 isetSub
+115 fsetSub
+116 isetMul
+117 fsetMul
+118 isetDiv
+119 fsetDiv
+120 isetMod
+121 fsetMod
+122 isetRand
+123 fsetRand
+124 fsin
+125 fcos
+126 ftan
+127 facos
+128 fatan
+129 validRad
+130 circlePos
+131 circlePosRand
+200 jmp
+201 jmpDec
+202 ije
+203 fje
+204 ijne
+205 fjne
+206 ijl
+207 fjl
+208 ijle
+209 fjle
+210 ijg
+211 fjg
+212 ijge
+213 fjge
+300 sprite
+301 spriteRand
+302 type
+303 blendMode
+305 zWriteDisable
+307 randMode
+308 flipX
+309 flipY
+310 visible
+311 resampleMode
+312 scrollMode
+313 resolutionMode
+315 colorizeChildren
+400 pos
+401 rotate
+405 alpha2
+406 color2
+407 posTime
+408 colorTime
+409 alphaTime
+410 rotateTime
+411 rotateTime2D
+412 scaleTime
+413 color2Time
+414 alpha2Time
+415 angleVel
+416 scaleGrowth
+417 alphaTimeLinear
+420 moveBezier
+421 anchorMode
+423 colorMode
+424 rotateAuto
+425 scrollX
+426 scrollY
+427 scrollXTime
+428 scrollYTime
+429 scaleUV
+430 scaleUVTime
+432 slowdownImmune
+435 scale2Time
+436 anchorOffset
+437 rotationMode
+438 originMode
+439 fadeNearCamera
+440 unflip
+500 scriptNew
+501 scriptNewUI
+502 scriptNewFront
+503 scriptNewUIFront
+504 scriptNewRoot
+505 scriptNewPos
+506 scriptNewRootPos
+508 effectNew
+509 copyVars
+600 texCircle
+601 texArcEven
+602 texArc
+603 drawRect
+604 drawPoly
+605 drawPolyBorder
+606 drawRectGrad
+607 drawRectRot
+608 drawRectRotGrad
+609 texCylinder3D
+610 texRing3D
+611 drawRing
+612 drawRectBorder
+613 drawLine
+
 ## Section A
 0 nop
 1 anm_delete
@@ -80,8 +221,8 @@
 313 resolution_mode
 314 anm_flag_inherit_rotation
 315 anm_flag_color_children
-316 anm_flag_set_visible2
-317 anm_flag_clear_visible2
+316 __anm_flag_set_visible2
+317 __anm_flag_clear_visible2
 318 __anm_flag_unknown_V
 319 __sprite_set_unknown
 
@@ -357,6 +498,24 @@
 634 f
 
 !gvar_names
+## Compatibility names
+## DO NOT USE THESE
+10008 I4
+10009 I5
+10010 RANDRAD
+10011 RANDF
+10012 RANDF2
+10013 POS_X
+10014 POS_Y
+10015 POS_Z
+10022 RAND
+10027 RANDFLIMIT
+10028 RANDRADLIMIT
+10029 RANDLIMIT
+10030 RANDRADREP
+10031 RANDFREP
+10032 RANDF2REP
+
 10000 I0
 10001 I1
 10002 I2
