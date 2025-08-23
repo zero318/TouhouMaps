@@ -91,6 +91,7 @@
 106 math_umod
 107 lookup_set_int
 108 lookup_set_float
+109 math_popcount
 
 
 ## Section B
@@ -336,6 +337,12 @@
 1002 __enemy_manager_set_unknown_F
 1003 __stone_value_set
 
+## ZECL
+1004 set_int_from_enemy
+1005 set_float_from_enemy
+1006 set_int_for_enemy
+1007 set_float_for_enemy
+
 !ins_signatures
 ## Section A
 0
@@ -424,6 +431,7 @@
 106
 107 SSS*S
 108 fSf*f
+109 SS
 
 ## Section B
 300 mffSSS
@@ -665,6 +673,12 @@
 1001 S
 1002 S
 1003 S
+
+## ZECL
+1004 SSS
+1005 fSS
+1006 SSS
+1007 fSS
 
 !gvar_names
 -10000 RAND_INT
