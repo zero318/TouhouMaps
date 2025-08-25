@@ -25,6 +25,7 @@
 19 __anm_interrupt_all
 20 __draw_distance
 21 camera_fov_interp
+22 __unknown_flag_A
 
 !ins_signatures
 0
@@ -48,6 +49,7 @@
 19 S
 20 f
 21 SU(enum="InterpMode")f
+22 S(enum="bool") # S(enum="BitBool")
 
 !ins_intrinsics
 1 Jmp()
