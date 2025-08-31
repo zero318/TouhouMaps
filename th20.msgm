@@ -22,7 +22,7 @@
 16 text_bottom_line
 17 text_dialogue
 18 text_clear
-19 music
+19 music_boss
 20 text_intro
 21 stage_end
 22 music_fade_out
@@ -60,7 +60,7 @@
 16 z(bs=4;mask=0x77,7,16;furibug)
 17 z(bs=4;mask=0x77,7,16;furibug)
 18
-19 S
+19
 20 S
 21
 22

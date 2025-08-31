@@ -92,7 +92,8 @@
 107 lookup_set_int
 108 lookup_set_float
 109 math_popcount
-
+110 lookup_int_ex
+111 lookup_float_ex
 
 ## Section B
 300 enemy_create_rel
@@ -136,10 +137,10 @@
 338 anm_create_rel_front_rotated
 339 __anm_create_zero_front_and_run
 340 __enemy_id_set_flag_unknown_A
-341 __enemy_flag_set_unknown_F
-342 __enemy_flag_clear_unknown_F
-343 __enemy_flag_unknown_G
-344 __enemy_id_exists2
+341 enemy_flag_set_create_familiars
+342 enemy_flag_clear_create_familiars
+343 __enemy_flag_familiar_related
+344 enemy_id_exists2
 
 ## Section C
 400 move_position_abs
@@ -266,7 +267,7 @@
 570 set_int_difficulty_ex
 571 set_float_difficulty_ex
 572 __item_reward_override
-573 __enemy_kill_all_unknown
+573 enemy_kill_all_stones
 574 __ecl_time_dec_offscreen_related
 575 __player_flag_unknown_A
 
@@ -432,6 +433,8 @@
 107 SSS*S
 108 fSf*f
 109 SS
+110 SSS*S
+111 fSf*f
 
 ## Section B
 300 mffSSS
@@ -800,14 +803,14 @@
 -9884 OPPOSITE_PLAYER_X
 -9883 OPPOSITE_PLAYER_Y
 -9882 SELF_GAME_SIDE
--9881 __UNKNOWN_A
+-9881 PLAYER_SUMMON_METER
 -9880 PLAYER_STORY_STONE_COLOR
 -9879 __ENEMY_OFFSCREEN_RELATED_WTF_IDK
 -9878 RAND_SIGNED_ONE
--9877 __BULLET_MANAGER_UNKNOWN_C
--9876 __SPELLCARD_UNKNOWN_B
--9875 __ENEMY_MANAGER_UNKNOWN_G
--9874 __ENEMY_MANAGER_UNKNOWN_H
+-9877 __BULLET_COUNT_UNKNOWN_A2
+-9876 SPELL_ACTIVE
+-9875 BOSS_ALIVE
+-9874 BOSS_DISTANCE
 # ZECL
 -9873 PLAYER_NARROW_SHOT_STONE_COLOR
 -9872 PLAYER_WIDE_SHOT_STONE_COLOR
