@@ -139,7 +139,7 @@
 340 __enemy_id_set_flag_unknown_A
 341 enemy_flag_set_create_familiars
 342 enemy_flag_clear_create_familiars
-343 __enemy_flag_familiar_related
+343 enemy_flag_anchor_to_parent
 344 enemy_id_exists2
 
 ## Section C
