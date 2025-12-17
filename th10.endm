@@ -5,11 +5,11 @@
 !ins_names
 0 end_delete
 # 1 and 2 don't exist
-#3 
-#4 
-5 __wait_A
-6 __wait_B
-7 __anm_load
+3 text_dialogue
+4 text_clear
+5 wait
+6 __wait_clear
+7 anm_source_load
 8 anm_set_slot 
 9 text_color
 10 music
@@ -27,7 +27,7 @@
 4
 5 S
 6 S
-7 Sz(bs=4)
+7 S(enum="AnmIndex")z(bs=4)
 8 S(enum="AnmSlotIndex")S(enum="AnmIndex")N
 9 C
 10 z(bs=4)
