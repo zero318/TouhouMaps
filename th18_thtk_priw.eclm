@@ -29,8 +29,6 @@
 43 pop_int
 44 push_float
 45 pop_float
-46 lookup_int
-47 lookup_float
 50 math_int_add
 51 math_float_add
 52 math_int_sub
@@ -76,24 +74,17 @@
 92 math_float_interp_bezier
 93 math_circle_pos_rand
 94 math_ellipse_pos
-95 __math_angle_95
-96 __math_angle_96
-97 __math_angle_97
 # ZECL
-98 debug_breakpoint
-99 thcrap_expr
-100 math_shl
-101 math_shr
-102 math_sar
-103 math_rol
-104 math_ror
-105 math_udiv
-106 math_umod
-107 lookup_set_int
-108 lookup_set_float
-109 math_popcount
-110 lookup_int_ex
-111 lookup_float_ex
+95 debug_breakpoint
+96 thcrap_expr
+97 math_shl
+98 math_shr
+99 math_sar
+100 math_rol
+101 math_ror
+102 math_udiv
+103 math_umod
+104 thcrap_print
 
 ## Section B
 300 enemy_create_rel
@@ -137,10 +128,6 @@
 338 anm_create_rel_front_rotated
 339 __anm_create_zero_front_and_run
 340 __enemy_id_set_flag_unknown_A
-341 enemy_flag_set_create_familiars
-342 enemy_flag_clear_create_familiars
-343 enemy_flag_anchor_to_parent
-344 enemy_id_exists2
 
 ## Section C
 400 move_position_abs
@@ -161,8 +148,8 @@
 415 move_to_boss0_rel
 416 move_position_add_abs
 417 move_position_add_rel
-418 move_origin_abs
-419 move_origin_rel
+418 move_origin_abs ## BROKEN, falls through to move_ellipse_rel
+419 move_origin_rel ## BROKEN, falls through to move_ellipse_rel
 420 move_ellipse_abs
 421 move_ellipse_abs_interp
 422 move_ellipse_rel
@@ -191,7 +178,6 @@
 445 move_speed_abs_interp
 446 move_speed_rel
 447 move_speed_rel_interp
-448 __move_set_slot_count
 
 ## Section D
 500 enemy_set_hitbox
@@ -223,53 +209,52 @@
 526 player_protect_range
 527 enemy_lifebar_color
 528 spellcard_start_2
-529 set_int_difficulty
-530 set_float_difficulty
-531 spellcard_start_difficulty
-532 spellcard_start_difficulty_1
-533 spellcard_start_difficulty_2
-534 boss_set_life_count
-535 enemy_no_collision_timer
-536 spellcard_flag_timeout_set
-537 __spellcard_flag_anm_unknown
-538 enemy_flag_homing_disable
-539 laser_clear_all
-540 enemy_bomb_shield
-541 game_speed_set
-542 ecl_time_sub_difficulty
-543 __enemy_flag_unknown_A
-544 enemy_set_kill_id
-545 enemy_kill_all_id
-546 anm_layer_base
-547 __enemy_damage_sound
-548 stage_logo
-549 enemy_id_exists
-550 death_callback_sub
-551 std_fog_interp
-552 enemy_flag_mirror2
-553 enemy_limit_set
-554 bullet_bounce_bounds_set
-555 __enemy_kill_effect_create
-556 drop_item_rewards_force
-557 enemy_flag_hitbox_shape
-558 enemy_set_hitbox_rotation
-559 enemy_bomb_shield_multiplier
-560 enemy_kill
-561 __spellcard_flag_unknown_A
-562 __enemy_flag_armored
-563 __enemy_set_chapter_spawn_weight ## TODO: Better name
-564 __enemy_add_spawn_weight_to_destroy ## TODO: Better name
-565 enemy_kill_all_no_callbacks
-566 __enemy_life_set_current
-567 item_timed_bonus_slot_set
-568 item_timed_bonus_duration
-569 nop569
-570 set_int_difficulty_ex
-571 set_float_difficulty_ex
-572 __item_reward_override
-573 enemy_kill_all_stones
-574 __ecl_time_dec_offscreen_related
-575 __player_flag_unknown_A
+529 set_float_rank_3 ## BROKEN, can't read middle value
+530 set_float_rank_5
+531 math_float_rank_lerp
+532 set_int_rank_3 ## BROKEN, can't read middle value
+533 set_int_rank_5
+534 math_int_rank_lerp
+535 set_int_difficulty
+536 set_float_difficulty
+537 spellcard_start_difficulty
+538 spellcard_start_difficulty_1
+539 spellcard_start_difficulty_2
+540 boss_set_life_count
+541 enemy_no_collision_timer
+542 spellcard_flag_timeout_set
+543 __spellcard_flag_anm_unknown
+544 enemy_flag_homing_disable
+545 laser_clear_all
+546 enemy_bomb_shield
+547 game_speed_set
+548 ecl_time_sub_difficulty
+549 __enemy_flag_unknown_A
+550 enemy_set_kill_id
+551 enemy_kill_all_id
+552 anm_layer_base
+553 __enemy_damage_sound
+554 __stage_logo
+555 enemy_id_exists
+556 death_callback_sub
+557 std_fog_interp
+558 enemy_flag_mirror2
+559 enemy_limit_set
+560 bullet_bounce_bounds_set
+561 __enemy_kill_effect_create
+562 drop_item_rewards_force
+563 enemy_flag_hitbox_shape
+564 enemy_set_hitbox_rotation
+565 enemy_bomb_shield_multiplier
+566 enemy_kill
+567 __spellcard_flag_unknown_A
+568 __enemy_flag_armored
+569 __enemy_set_chapter_spawn_weight ## TODO: Better name
+570 __enemy_add_spawn_weight_to_destroy ## TODO: Better name
+571 enemy_kill_all_no_callbacks
+572 __enemy_life_set_current
+573 item_timed_bonus_slot_set
+574 item_timed_bonus_duration
 
 ## Section E
 600 shooter_reset
@@ -289,23 +274,31 @@
 614 shooter_copy
 615 bullet_cancel_radius
 616 bullet_clear_radius
-617 set_float_angle_to_player_from_point
-618 shoot_offset_circle
-619 shoot_spawn_distance
-620 __shoot_origin
-621 enemy_fog_spawn
-622 std_interrupt
-623 __enemy_manager_flag_unknown_A
-624 ex_ins_repeat
-625 enemy_damage_ex
-626 enemy_hitbox_ex
-627 bullet_cancel_weak_radius
-628 bullet_clear_weak_radius
-629 ex_ins_call
-630 score_add
-631 __ex_ins_repeat2
-632 bullet_effects_set_string
-633 __bullet_effects_prev
+617 bullet_speed_rank_3
+618 bullet_speed_rank_5
+619 bullet_speed_rank_lerp
+620 bullet_count_rank_3
+621 bullet_count_rank_5
+622 bullet_count_rank_lerp
+623 set_float_angle_to_player_from_point
+624 bullet_speed_difficulty
+625 bullet_count_difficulty
+626 shoot_offset_circle
+627 shoot_spawn_distance
+628 __shoot_origin
+629 enemy_fog_spawn
+630 std_interrupt
+631 __enemy_manager_flag_unknown_A
+632 ex_ins_repeat
+633 enemy_damage_ex
+634 enemy_hitbox_ex
+635 bullet_cancel_weak_radius
+636 bullet_clear_weak_radius
+637 ex_ins_call
+638 score_add
+639 __ex_ins_repeat2
+640 bullet_effects_set_string
+641 __bullet_effects_prev
 
 ## Section F
 700 laser_size_data
@@ -334,21 +327,15 @@
 902 __debug_unknown_D
 
 ## Section I
-1001 __stone_enemy_spawn
-1002 __enemy_manager_set_unknown_F
-1003 __stone_value_set
-
-## ZECL
-1004 set_int_from_enemy
-1005 set_float_from_enemy
-1006 set_int_of_enemy
-1007 set_float_of_enemy
+1001 __globals_flag_unknown_A
+# ZECL
+1002 set_int_card_count
 
 !ins_signatures
 ## Section A
-0
-1
-10
+0 _
+1 _
+10 _
 11 m*D
 12 ot
 13 ot
@@ -359,82 +346,73 @@
 18 S
 19 S
 20 SS
-21 
+21 _
 22 Sm
 23 S
 24 f
 30 m*D
 40 S
-41
+41 _
 42 S
 43 S
 44 f
 45 f
-46 SSS*H
-47 fSf*H
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
+50 _
+51 _
+52 _
+53 _
+54 _
+55 _
+56 _
+57 _
+58 _
+59 _
+60 _
+61 _
+62 _
+63 _
+64 _
+65 _
+66 _
+67 _
+68 _
+69 _
+70 _
+71 _
+72 _
+73 _
+74 _
+75 _
+76 _
+77 _
 78 S
-79
-80
+79 _
+80 _
 81 ffff
 82 f
-83
-84
+83 _
+84 _
 85 fff
 86 fff
 87 fffff
-88
+88 _
 89 fff
 90 fffff
 91 SfSSff
 92 SfSSffff
 93 ffff
 94 ffffff
-95 fff
-96 ff
-97 ff
 # ZECL
-98
-99 Sz
-100
-101
-102
-103
-104
-105
-106
-107 SSS*S
-108 fSf*f
-109 SS
-110 SSS*S
-111 fSf*f
+95 _
+96 Sz
+97 _
+98 _
+99 _
+100 _
+101 _
+102 _
+103 _
+104 m*D
 
 ## Section B
 300 mffSSS
@@ -455,7 +433,7 @@
 315 SSf
 316 SS
 317 SS
-318
+318 _
 319 Sf
 320 Sff
 321 mffSSS
@@ -477,10 +455,6 @@
 338 SSfff
 339 SSS
 340 S
-341
-342
-343 S
-344 SS
 
 ## Section C
 400 ff
@@ -497,8 +471,8 @@
 411 SSfff
 412 SSf
 413 SSf
-414
-415
+414 _
+415 _
 416 fff
 417 fff
 418 ff
@@ -510,7 +484,7 @@
 424 S
 425 Sffffff
 426 Sffffff
-427
+427 _
 428 ff
 429 SSff
 430 ff
@@ -538,77 +512,76 @@
 502 S
 503 S
 504 ffff
-505
-506
+505 _
+506 _
 507 SS
 508 ff
-509
+509 _
 510 S
 511 S
 512 S
-513
+513 _
 514 SSSm
 515 S
 516 S
 517 SSS
 518 S
-519
-520
+519 _
+520 _
 521 Sm
 522 SSSx
-523
+523 _
 524 S
-525
+525 _
 526 f
 527 SfS
 528 SSSx
-529 SSSSS
-530 fffff
-531 SSSx
-532 SSSx
-533 SSSx
-534 S
-535 S
-536
-537
-538 S
-539
-540 SS
-541 f
-542 SSSS
-543 S
+529 fff ## Signature may have more unused args
+530 fffff ## Signature may have more unused args
+531 fff
+532 SSS ## Signature may have more unused args
+533 SSSSS ## Signature may have more unused args
+534 SSS
+535 SSSSS
+536 fffff
+537 SSSx
+538 SSSx
+539 SSSx
+540 S
+541 S
+542 _
+543 _
 544 S
-545 S
-546 S
-547 S
-548
-549 SS
-550 m
-551 SSSff
+545 _
+546 SS
+547 f
+548 SSSS
+549 S
+550 S
+551 S
 552 S
 553 S
-554 ff
-555
-556
-557 S
-558 f
-559 f
-560
-561 S
-562 S
+554 _
+555 SS
+556 m
+557 SSSff
+558 S
+559 S
+560 ff
+561 _
+562 _
 563 S
-564
-565
-566 S
-567 SS
+564 f
+565 f
+566 _
+567 S
 568 S
-#569
-570 SSSSSSSSS
-571 fffffffff
+569 S
+570 _
+571 _
 572 S
-573
-574
-575 S
+573 SS
+574 S
 
 ## Section E
 600 S
@@ -624,27 +597,35 @@
 610 SSSSSSSSffff
 611 SSSSSff
 612 SSSSSSSffff
-613
+613 _
 614 SS
 615 f
 616 f
-617 fff
-618 Sff
-619 Sf
-620 Sff
-621 fS
-622 S
-623 S
-624 S
-625 S
-626 S
-627 f
-628 f
-629 S
+617 Sffffff
+618 Sffffffffff
+619 Sffff
+620 SSSSSSS
+621 SSSSSSSSSSS
+622 SSSSS
+623 fff
+624 Sffffffff
+625 SSSSSSSSS
+626 Sff
+627 Sf
+628 Sff
+629 fS
 630 S
 631 S
-632 SSm
+632 S
 633 S
+634 S
+635 f
+636 f
+637 S
+638 S
+639 S
+640 SSm
+641 S
 
 ## Section F
 700 Sffff
@@ -669,19 +650,13 @@
 802 S
 
 ## Section H
-901
-902
+901 _
+902 _
 
 ## Section I
 1001 S
-1002 S
-1003 S
-
-## ZECL
-1004 SSS
-1005 fSS
-1006 SSS
-1007 fSS
+# ZECL
+1002 Sz
 
 !gvar_names
 -10000 RAND_INT
@@ -707,12 +682,12 @@
 -9980 EF1
 -9979 EF2
 -9978 EF3
--9977 LAST_FRAME_X_DELTA
--9976 LAST_FRAME_Y_DELTA
--9975 SELF_ORIGIN_X_ABS
--9974 SELF_ORIGIN_Y_ABS
--9973 SELF_ORIGIN_X_REL
--9972 SELF_ORIGIN_Y_REL
+-9977 SELF_X2
+-9976 SELF_Y2
+-9975 SELF_X2_ABS
+-9974 SELF_Y2_ABS
+-9973 SELF_X2_REL
+-9972 SELF_Y2_REL
 -9971 SELF_ANGLE_ABS
 -9970 SELF_ANGLE_REL
 -9969 SELF_SPEED_ABS
@@ -782,43 +757,16 @@
 -9905 CHAPTER
 -9904 PLAYER_DEATHS_GLOBAL
 #-9903
-#-9902 __BULLET_MANAGER_UNKNOWN_B
+-9902 __BULLET_MANAGER_UNKNOWN_B
 #-9901
 #-9900
 -9899 ACHIEVEMENT_MODE
 -9898 __BULLET_COUNT_UNKNOWN_A
-#-9897
--9896 __ENEMY_MANAGER_UNKNOWN_F
--9895 WI0
--9894 WI1
--9893 WI2
--9892 WI3
-#-9891 __ABILITY_MANAGER_UNKNOWN_A
-#-9890
--9889 __ENEMY_COUNT_UNKNOWN_FLAG_D
-#-9888 __GLOBAL_SIDE_UNKNOWN_A
--9887 STORY_BOSS_DIFFICULTY
--9886 STORY_BOSS_FINAL_PHASE
--9885 DIFFICULTY_GLOBAL
--9884 OPPOSITE_PLAYER_X
--9883 OPPOSITE_PLAYER_Y
--9882 SELF_GAME_SIDE
--9881 PLAYER_SUMMON_METER
--9880 PLAYER_STORY_STONE_COLOR
--9879 __ENEMY_OFFSCREEN_RELATED_WTF_IDK
--9878 RAND_SIGNED_ONE
--9877 __BULLET_COUNT_UNKNOWN_A2
--9876 SPELL_ACTIVE
--9875 BOSS_ALIVE
--9874 BOSS_DISTANCE
 # ZECL
--9873 PLAYER_NARROW_SHOT_STONE_COLOR
--9872 PLAYER_WIDE_SHOT_STONE_COLOR
--9871 PLAYER_ASSIST_STONE_COLOR
--9870 PLAYER_STORY_STONE
--9869 PLAYER_NARROW_SHOT_STONE
--9868 PLAYER_WIDE_SHOT_STONE
--9867 PLAYER_ASSIST_STONE
+-9897 TOTAL_CARDS
+-9896 ACTIVE_CARDS
+-9895 EQUIPMENT_CARDS
+-9894 PASSIVE_CARDS
 
 !gvar_types
 -10000 $
@@ -919,40 +867,13 @@
 -9905 $
 -9904 $
 #-9903
-#-9902 $
+-9902 $
 #-9901
 #-9900
 -9899 $
 -9898 $
-#-9897
+# ZECL
+-9897 $
 -9896 $
 -9895 $
 -9894 $
--9893 $
--9892 $
-#-9891 $
-#-9890 $
--9889 $
-#-9888 %
--9887 $
--9886 $
--9885 $
--9884 %
--9883 %
--9882 $
--9881 $
--9880 $
--9879 $
--9878 $
--9877 $
--9876 $
--9875 $
--9874 %
-# ZECL
--9873 $
--9872 $
--9871 $
--9870 $
--9869 $
--9868 $
--9867 $

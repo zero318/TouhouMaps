@@ -7,19 +7,19 @@
 # 1 and 2 don't exist
 #3 
 #4 
-#5 
-#6 
-#7 
-#8 
-#9 
-#10 
-#11 
-#12 
-#13 
-#14 
-#15 
-#16 
-#17 
+5 __wait_A
+6 __wait_B
+7 __anm_load
+8 anm_set_slot 
+9 text_color
+10 music
+11 music_fade_out
+12 __end_switch_to_staff
+13 __screen_effect_A
+14 __screen_effect_B
+15 anm_set_slot_normal
+16 anm_set_slot_hard
+17 anm_set_slot_lunatic
 
 !ins_signatures
 0
@@ -28,13 +28,37 @@
 5 S
 6 S
 7 Sz(bs=4)
-8 SSN
+8 S(enum="AnmSlotIndex")S(enum="AnmIndex")N
 9 C
 10 z(bs=4)
 11
 12 z(bs=4)
 13 S
 14 S
-15 SSN
-16 SSN
-17 SSN
+15 S(enum="AnmSlotIndex")S(enum="AnmIndex")N
+16 S(enum="AnmSlotIndex")S(enum="AnmIndex")N
+17 S(enum="AnmSlotIndex")S(enum="AnmIndex")N
+
+!enum(name="AnmIndex")
+0 AnmIndex0
+1 AnmIndex1
+2 AnmIndex2
+3 AnmIndex3
+
+!enum(name="AnmSlotIndex")
+0 AnmSlot0
+1 AnmSlot1
+2 AnmSlot2
+3 AnmSlot3
+4 AnmSlot4
+5 AnmSlot5
+6 AnmSlot6
+7 AnmSlot7
+8 AnmSlot8
+9 AnmSlot9
+10 AnmSlot10
+11 AnmSlot11
+12 AnmSlot12
+13 AnmSlot13
+14 AnmSlot14
+15 AnmSlot15
