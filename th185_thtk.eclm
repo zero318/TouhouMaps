@@ -75,16 +75,6 @@
 93 math_circle_pos_rand
 94 math_ellipse_pos
 # ZECL
-95 debug_breakpoint
-96 thcrap_expr
-97 math_shl
-98 math_shr
-99 math_sar
-100 math_rol
-101 math_ror
-102 math_udiv
-103 math_umod
-#104 thcrap_print
 
 ## Section B
 300 enemy_create_rel
@@ -234,7 +224,7 @@
 551 enemy_kill_all_id
 552 anm_layer_base
 553 enemy_damage_sound
-554 stage_logo
+554 nop_554
 555 enemy_id_exists
 556 death_callback_sub
 557 std_fog_interp
@@ -292,7 +282,7 @@
 632 ex_ins_repeat
 633 enemy_damage_ex
 634 enemy_hitbox_ex
-635 bullet_cancel_weak_radius
+635 bullet_cancel_weak_radius ## Not removed, but same as 636
 636 bullet_clear_weak_radius
 637 ex_ins_call
 638 score_add
@@ -328,14 +318,37 @@
 
 ## Section I
 1001 __globals_flag_unknown_A
-# ZECL
-1002 set_int_card_count
+1002 __store_open
+1003 __store_wait
+1004 __wave_number_set
+1005 __wave_number_inc
+1006 __enemy_manager_unknown_E
+1007 difficulty_set
+1008 __difficulty_inc
+1009 __wave_reset_unknown_A
+1010 __wave_reset_unknown_B
+1011 __wave_weight_set
+1012 __wave_spawn
+1013 __write_int_array
+1014 __write_float_array
+1015 __read_int_array_by_difficulty
+1016 __read_float_array_by_difficulty
+1017 stage_end
+1018 __enemy_manager_set_unknown_timer_A
+1019 __game_over
+1020 __set_enemy_manager_unknown_F_var
+1021 __wave_set_WI0_data
+1022 __music
+1023 __item_manager_unknown_int_A_set
+1024 __scorefile_unknown_A
+1025 __scorefile_unknown_B
+1026 __item_manager_unknown_int_A_average
 
 !ins_signatures
 ## Section A
-0 _
-1 _
-10 _
+0
+1
+10
 11 m*D
 12 ot
 13 ot
@@ -346,56 +359,56 @@
 18 S
 19 S
 20 SS
-21 _
+21 
 22 Sm
 23 S
 24 f
 30 m*D
 40 S
-41 _
+41
 42 S
 43 S
 44 f
 45 f
-50 _
-51 _
-52 _
-53 _
-54 _
-55 _
-56 _
-57 _
-58 _
-59 _
-60 _
-61 _
-62 _
-63 _
-64 _
-65 _
-66 _
-67 _
-68 _
-69 _
-70 _
-71 _
-72 _
-73 _
-74 _
-75 _
-76 _
-77 _
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
 78 S
-79 _
-80 _
+79
+80
 81 ffff
 82 f
-83 _
-84 _
+83
+84
 85 fff
 86 fff
 87 fffff
-88 _
+88
 89 fff
 90 fffff
 91 SfSSff
@@ -403,15 +416,15 @@
 93 ffff
 94 ffffff
 # ZECL
-95 _
+95
 96 Sz
-97 _
-98 _
-99 _
-100 _
-101 _
-102 _
-103 _
+97
+98
+99
+100
+101
+102
+103
 #104 m*D
 
 ## Section B
@@ -433,7 +446,7 @@
 315 SSf
 316 SS
 317 SS
-318 _
+318
 319 Sf
 320 Sff
 321 mffSSS
@@ -471,8 +484,8 @@
 411 SSfff
 412 SSf
 413 SSf
-414 _
-415 _
+414
+415
 416 fff
 417 fff
 418 ff
@@ -484,7 +497,7 @@
 424 S
 425 Sffffff
 426 Sffffff
-427 _
+427
 428 ff
 429 SSff
 430 ff
@@ -512,27 +525,27 @@
 502 S
 503 S
 504 ffff
-505 _
-506 _
+505
+506
 507 SS
 508 ff
-509 _
+509
 510 S
 511 S
 512 S
-513 _
+513
 514 SSSm
 515 S
 516 S
 517 SSS
 518 S
-519 _
-520 _
+519
+520
 521 Sm
 522 SSSx
-523 _
+523
 524 S
-525 _
+525
 526 f
 527 SfS
 528 SSSx
@@ -542,17 +555,17 @@
 532 SSS ## Signature may have more unused args
 533 SSSSS ## Signature may have more unused args
 534 SSS
-535 SSSSS
-536 fffff
+535 SSSSSSSSS
+536 fffffffff
 537 SSSx
 538 SSSx
 539 SSSx
 540 S
 541 S
-542 _
-543 _
+542
+543
 544 S
-545 _
+545
 546 SS
 547 f
 548 SSSS
@@ -561,24 +574,24 @@
 551 S
 552 S
 553 S
-554 _
+554
 555 SS
 556 m
 557 SSSff
 558 S
 559 S
 560 ff
-561 _
-562 _
+561
+562
 563 S
 564 f
 565 f
-566 _
+566
 567 S
 568 S
 569 S
-570 _
-571 _
+570
+571
 572 S
 573 SS
 574 S
@@ -597,7 +610,7 @@
 610 SSSSSSSSffff
 611 SSSSSff
 612 SSSSSSSffff
-613 _
+613
 614 SS
 615 f
 616 f
@@ -645,18 +658,40 @@
 714 SS
 
 ## Section G
-800 Sz
+800 Sm
 801 ffS
 802 S
 
 ## Section H
-901 _
-902 _
+901
+902
 
 ## Section I
 1001 S
-# ZECL
-1002 Sz
+1002
+1003
+1004 S
+1005
+1006 m
+1007 S
+1008
+1009
+1010
+1011 SS
+1012 S
+1013 SSSSSSSSS
+1014 Sffffffff
+1015 SS
+1016 fS
+1017
+1018 S
+1019
+1020 S
+1021 SS
+1023 S
+1024 S
+1025
+1026 S
 
 !gvar_names
 -10000 RAND_INT
@@ -762,11 +797,14 @@
 #-9900
 -9899 ACHIEVEMENT_MODE
 -9898 BULLET_COUNT
-# ZECL
--9897 TOTAL_CARDS
--9896 ACTIVE_CARDS
--9895 EQUIPMENT_CARDS
--9894 PASSIVE_CARDS
+#-9897
+-9896 __ENEMY_MANAGER_UNKNOWN_F
+-9895 WI0
+-9894 WI1
+-9893 WI2
+-9892 WI3
+-9891 JUNKO_CARD_EQUIPPED
+-9890 __SCOREFILE_UNKNOWN_C
 
 !gvar_types
 -10000 $
@@ -872,8 +910,11 @@
 #-9900
 -9899 $
 -9898 $
-# ZECL
--9897 $
+#-9897
 -9896 $
 -9895 $
 -9894 $
+-9893 $
+-9892 $
+-9891 $
+-9890 $

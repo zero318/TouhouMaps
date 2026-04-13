@@ -113,14 +113,14 @@
 323 enemy_flags_clear
 324 move_bounds_set
 325 move_bounds_disable
-326 item_bonus_slots_reset
-327 item_bonus_slot_set
+326 item_bonus_count_reset
+327 item_bonus_count_set
 328 item_drop_area
 329 drop_item_rewards
 330 item_reward_set
 331 enemy_life_set
 332 boss_set
-333 boss_timer_clear
+333 phase_timer_clear
 334 callback_ex
 335 enemy_invincible_timer
 336 effect_sound
@@ -135,7 +135,7 @@
 345 enemy_kill_all
 346 player_protect_range
 347 enemy_lifebar_color
-348 __spellcard_start_2
+348 spellcard_start_2
 349 set_float_rank_3 ## BROKEN, can't read middle value
 350 set_float_rank_5
 351 math_float_rank_lerp
@@ -301,7 +301,7 @@
 324 ffff
 325
 326
-327 S(enum="BonusDropIndex")S(enum="ItemID")
+327 S(enum="BonusDropIndex")S
 328 ff
 329
 330 S(enum="ItemID")
@@ -394,17 +394,17 @@
 -9991 PLAYER_X
 -9990 PLAYER_Y
 -9989 PLAYER_ANGLE
--9988 BOSS_TIMER
+-9988 PHASE_TIMER
 -9987 RAND_FLOAT_SIGNED
 -9986 SPELL_TIMEOUT
--9985 I0
--9984 I1
--9983 I2
--9982 I3
--9981 F0
--9980 F1
--9979 F2
--9978 F3
+-9985 EI0
+-9984 EI1
+-9983 EI2
+-9982 EI3
+-9981 EF0
+-9980 EF1
+-9979 EF2
+-9978 EF3
 -9977 SELF_X2
 -9976 SELF_Y2
 -9975 SELF_X2_ABS
@@ -421,7 +421,7 @@
 -9964 PLAYER_Y2
 -9963 BOSS0_X
 -9962 BOSS0_Y
--9961 ANM_SLOT0_ID
+-9961 ANM_SLOT0_SCRIPT_ID
 -9960 RANK
 -9959 DIFFICULTY
 -9958 SELF_ANGLE

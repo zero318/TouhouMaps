@@ -37,8 +37,8 @@
 7 f
 8 Cff
 9 SU(enum="InterpMode")Cff
-10 S_fffffffff
-11 S_fffffffff
+10 SU(enum="InterpModeBezierOnly")fffffffff # Second argument ignored, always 8
+11 SU(enum="InterpModeBezierOnly")fffffffff # Second argument ignored, always 8
 12 b(enum="ShakingMode")---
 13 C
 14 S(enum="BackgroundSlot")NS # Special behaviors: -2 sets the VM to be invisible and -1 ends the script
@@ -86,6 +86,9 @@
 29 __DecelParabolaC
 30 __DecelParabolaD
 31 __DecelParabolaE
+
+!enum(name="InterpModeBezierOnly")
+8 Bezier
 
 !enum(name="ShakingMode")
 0 Disable

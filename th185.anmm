@@ -80,10 +80,8 @@
 313 resolution_mode
 314 anm_flag_inherit_rotation
 315 anm_flag_color_children
-316 anm_flag_set_visible2
-317 anm_flag_clear_visible2
-318 __anm_flag_unknown_V
-319 __sprite_set_unknown
+316 __anm_flag_set_visible2
+317 __anm_flag_clear_visible2
 
 ## Section E
 400 move_position
@@ -127,7 +125,6 @@
 438 origin_mode
 439 camera_fade
 440 scale_unflip
-441 move_position2
 
 ## Section F
 500 anm_create_child_back
@@ -140,7 +137,6 @@
 507 __anm_flag_treat_as_root
 508 effect_create_special
 509 copy_parent_context
-510 anm_create_child_front_rel
 
 ## Section G
 600 textured_ring
@@ -158,26 +154,6 @@
 612 polygon_rectangle_hollow
 613 polygon_line
 614 __polygon_unknown_A
-615 __polygon_ring_unknown_A
-616 __polygon_ring_unknown_B
-617 __polygon_unknown_C
-618 __polygon_unknown_D
-619 __polygon_unknown_E
-620 __polygon_unknown_F1
-621 __polygon_unknown_F2
-622 __polygon_unknown_F3
-623 __polygon_unknown_G
-624 __polygon_unknown_H
-625 __polygon_unknown_I1
-626 __polygon_unknown_I2
-627 __polygon_unknown_I3
-628 __polygon_unknown_J
-629 __polygon_unknown_K
-630 __polygon_unknown_L1
-631 __polygon_unknown_L2
-632 __polygon_unknown_L3
-633 __polygon_unknown_M
-634 __polygon_unknown_N
 
 !ins_signatures
 ## Section A
@@ -259,8 +235,6 @@
 315 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
 316
 317
-318 b(imm;enum="bool")--- ## b(imm;enum="BitBool")---
-319 nnnn
 
 ## Section E
 400 fff
@@ -304,7 +278,6 @@
 438 b(imm;enum="OriginMode")---
 439 b(imm;enum="bool")---f(imm)f(imm) ## b(imm;enum="BitBool")---f(imm)f(imm)
 440
-441 fff
 
 ## Section F
 500 N
@@ -317,7 +290,6 @@
 507 U(enum="bool") ## U(enum="BitBool")
 508 U(enum="EffectID")
 509
-510 Nff
 
 ## Section G
 600 U
@@ -335,26 +307,6 @@
 612 ff
 613 ff
 614 ff
-615 ffS
-616 ffS
-617 fS
-618
-619 fS
-620 ffS
-621 ffS
-622 ffS
-623 fffS
-624 fffS
-625 ffffS
-626 ffffS
-627 ffffS
-628 fS
-629 fS
-630 ffS
-631 ffS
-632 ffS
-633 S
-634 f
 
 !gvar_names
 10000 I0
@@ -393,16 +345,6 @@
 10033 __UNKNOWN_X
 10034 __UNKNOWN_Y
 10035 __UNKNOWN_Z
-# ZANM
-10036 PLAYER_POWER
-10037 PLAYER_STORY_STONE_COLOR
-10038 PLAYER_NARROW_SHOT_STONE_COLOR
-10039 PLAYER_WIDE_SHOT_STONE_COLOR
-10040 PLAYER_ASSIST_STONE_COLOR
-10041 PLAYER_STORY_STONE
-10042 PLAYER_NARROW_SHOT_STONE
-10043 PLAYER_WIDE_SHOT_STONE
-10044 PLAYER_ASSIST_STONE
 
 !gvar_types
 10000 $
@@ -441,16 +383,6 @@
 10033 %
 10034 %
 10035 %
-# ZANM
-10036 $
-10037 $
-10038 $
-10039 $
-10040 $
-10041 $
-10042 $
-10043 $
-10044 $
 
 !ins_intrinsics
 5 Interrupt()
@@ -590,12 +522,15 @@
 7 BlendMode7
 8 BlendMode8
 9 BlendMode9
+10 BlendMode10
+11 BlendMode11
 
 !enum(name="RandMode")
 0 ReplayRNG
 1 AnimationRNG
 
 !enum(name="ResampleMode")
+-1 ResampleModeN1
 0 LinearInterp
 1 NearestPoint
 
@@ -648,3 +583,10 @@
 
 
 !enum(name="EffectID")
+0 Effect0
+1 Effect1
+2 Effect2
+3 Effect3
+4 Effect4
+5 Effect5
+6 Effect6

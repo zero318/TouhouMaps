@@ -34,8 +34,8 @@
 7 f
 8 Cff
 9 SU(enum="InterpMode")Cff
-10 S_fffffffff
-11 S_fffffffff
+10 SU(enum="InterpModeBezierOnly")fffffffff
+11 SU(enum="InterpModeBezierOnly")fffffffff
 12 b(enum="ShakingMode")---
 13 C
 14 S(enum="BackgroundSlot")N
@@ -66,6 +66,9 @@
 15 Initial
 16 Final
 17 ConstantAccel
+
+!enum(name="InterpModeBezierOnly")
+8 Bezier
 
 !enum(name="ShakingMode")
 0 Disable

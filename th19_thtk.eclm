@@ -69,14 +69,14 @@
 87 math_line_angle
 88 math_sqrt
 89 math_angle_diff
-90 __math_point_rotate
+90 math_point_rotate
 91 math_float_interp
 92 math_float_interp_bezier
 93 math_circle_pos_rand
 94 math_ellipse_pos
 95 __math_angle_95
-96 __math_angle_96
-97 __math_angle_97
+96 __math_angle_direction_x ## BROKEN
+97 __math_angle_direction_y
 # ZECL
 98 debug_breakpoint
 99 thcrap_expr
@@ -87,7 +87,7 @@
 104 math_ror
 105 math_udiv
 106 math_umod
-107 thcrap_print
+#107 thcrap_print
 
 ## Section B
 300 enemy_create_rel
@@ -124,13 +124,13 @@
 331 anm_alpha2_slot
 332 anm_alpha2_slot_interp
 333 anm_move_position_slot_interp
-334 __effect_create_special
+334 effect_create_special
 335 anm_scale2_slot
-336 __anm_layer_slot
+336 anm_layer_slot
 337 anm_blend_mode_slot
 338 anm_create_rel_front_rotated
 339 __anm_create_zero_front_and_run
-340 __enemy_id_set_flag_unknown_A
+340 enemy_id_delete
 
 ## Section C
 400 move_position_abs
@@ -189,14 +189,14 @@
 503 enemy_flags_clear
 504 move_bounds_set
 505 move_bounds_disable
-506 item_bonus_slots_reset
-507 item_bonus_slot_set
+506 item_bonus_count_reset
+507 item_bonus_count_set
 508 item_drop_area
 509 drop_item_rewards
 510 item_reward_set
 511 enemy_life_set
 512 boss_set
-513 boss_timer_clear
+513 phase_timer_clear
 514 callback_ex
 515 enemy_invincible_timer
 516 effect_sound
@@ -230,7 +230,7 @@
 544 enemy_set_kill_id
 545 enemy_kill_all_id
 546 anm_layer_base
-547 __enemy_damage_sound
+547 enemy_damage_sound
 548 nop548
 549 enemy_id_exists
 550 death_callback_sub
@@ -250,7 +250,7 @@
 564 __enemy_add_spawn_weight_to_destroy ## TODO: Better name
 565 enemy_kill_all_no_callbacks
 566 __enemy_life_set_current
-567 item_timed_bonus_slot_set
+567 item_timed_bonus_count_set
 568 item_timed_bonus_duration
 569 __math_unknown_A
 570 set_int_difficulty_ex
@@ -280,7 +280,7 @@
 620 __shoot_origin
 621 enemy_fog_spawn
 622 std_interrupt
-623 __enemy_manager_flag_unknown_A
+623 boss_flag_hide_hud
 624 ex_ins_repeat
 625 enemy_damage_ex
 626 enemy_hitbox_ex
@@ -315,8 +315,8 @@
 802 boss_callback
 
 ## Section H
-901 __debug_unknown_C
-902 __debug_unknown_D
+901 __debug_skip_start
+902 __debug_skip_stop
 
 ## Section I
 1002 __store_open
@@ -332,9 +332,9 @@
 1014 __write_float_array
 1015 __read_int_array_by_difficulty
 1016 __read_float_array_by_difficulty
-1017 __story_clear
+1017 stage_end
 1018 __enemy_manager_set_unknown_timer_A
-1019 __pause_unknown_A
+1019 __game_over
 1020 __set_enemy_manager_unknown_F_var
 1021 __wave_set_WI0_data
 1022 music
@@ -453,7 +453,7 @@
 104
 105
 106
-107 m*D
+#107 m*D
 
 ## Section B
 300 mffSSS
@@ -675,7 +675,7 @@
 714 SS
 
 ## Section G
-800 Sz
+800 Sm
 801 ffS
 802 S
 
@@ -747,7 +747,7 @@
 -9991 PLAYER_X
 -9990 PLAYER_Y
 -9989 PLAYER_ANGLE
--9988 BOSS_TIMER
+-9988 PHASE_TIMER
 -9987 RAND_FLOAT_SIGNED
 -9986 SPELL_TIMEOUT
 -9985 EI0
@@ -828,24 +828,24 @@
 -9910 BOSS0_SPEED_ABS
 -9909 PARENT_ENEMY_ID
 -9908 ENEMY_COUNT_KILLABLE
--9907 SPELL_ID
+-9907 SPELL_PRACTICE_ID
 -9906 SELF_MIRROR
 -9905 CHAPTER
 -9904 PLAYER_DEATHS_GLOBAL
 #-9903
-#-9902 __BULLET_MANAGER_UNKNOWN_B
+#-9902 __GRAZE_RECENT
 #-9901
 #-9900
 -9899 ACHIEVEMENT_MODE
--9898 __BULLET_COUNT_UNKNOWN_A
+-9898 BULLET_COUNT
 #-9897
 -9896 __ENEMY_MANAGER_UNKNOWN_F
 -9895 WI0
 -9894 WI1
 -9893 WI2
 -9892 WI3
-#-9891 __ABILITY_MANAGER_UNKNOWN_A
-#-9890
+#-9891 JUNKO_CARD_EQUIPPED
+#-9890 __SCOREFILE_UNKNOWN_C
 -9889 __ENEMY_COUNT_UNKNOWN_FLAG_D
 -9888 __GLOBAL_SIDE_UNKNOWN_A
 -9887 STORY_BOSS_DIFFICULTY

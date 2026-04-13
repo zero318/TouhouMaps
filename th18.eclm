@@ -69,7 +69,7 @@
 87 math_line_angle
 88 math_sqrt
 89 math_angle_diff
-90 __math_point_rotate
+90 math_point_rotate
 91 math_float_interp
 92 math_float_interp_bezier
 93 math_circle_pos_rand
@@ -98,8 +98,8 @@
 319 anm_rotate_slot
 320 anm_move_position_slot
 321 __enemy_create_rel_2
-322 __anm_set_slot_indirect
-323 __anm_death_effects
+322 __anm_set_slot_anchor_index
+323 anm_death_effects
 324 enemy_id_get_position
 325 anm_color_slot
 326 anm_color_slot_interp
@@ -110,13 +110,13 @@
 331 anm_alpha2_slot
 332 anm_alpha2_slot_interp
 333 anm_move_position_slot_interp
-334 __effect_create_special
+334 effect_create_special
 335 anm_scale2_slot
-336 __anm_layer_slot
+336 anm_layer_slot
 337 anm_blend_mode_slot
 338 anm_create_rel_front_rotated
 339 effect_create
-340 __enemy_id_set_flag_unknown_A
+340 enemy_id_delete
 
 ## Section C
 400 move_position_abs
@@ -175,14 +175,14 @@
 503 enemy_flags_clear
 504 move_bounds_set
 505 move_bounds_disable
-506 item_bonus_slots_reset
-507 item_bonus_slot_set
+506 item_bonus_count_reset
+507 item_bonus_count_set
 508 item_drop_area
 509 drop_item_rewards
 510 item_reward_set
 511 enemy_life_set
 512 boss_set
-513 boss_timer_clear
+513 phase_timer_clear
 514 callback_ex
 515 enemy_invincible_timer
 516 effect_sound
@@ -222,8 +222,8 @@
 550 enemy_set_kill_id
 551 enemy_kill_all_id
 552 anm_layer_base
-553 __enemy_damage_sound
-554 __stage_logo
+553 enemy_damage_sound
+554 stage_logo
 555 enemy_id_exists
 556 death_callback_sub
 557 std_fog_interp
@@ -234,7 +234,7 @@
 562 drop_item_rewards_force
 563 enemy_flag_hitbox_shape
 564 enemy_set_hitbox_rotation
-565 __enemy_bomb_shield_amount ## TODO: Better name
+565 enemy_bomb_shield_multiplier
 566 enemy_kill
 567 __spellcard_flag_unknown_A
 568 __enemy_flag_armored
@@ -242,7 +242,7 @@
 570 __enemy_add_spawn_weight_to_destroy ## TODO: Better name
 571 enemy_kill_all_no_callbacks
 572 __enemy_life_set_current
-573 item_timed_bonus_slot_set
+573 item_timed_bonus_count_set
 574 item_timed_bonus_duration
 
 ## Section E
@@ -277,7 +277,7 @@
 628 __shoot_origin
 629 enemy_fog_spawn
 630 std_interrupt
-631 __enemy_manager_flag_unknown_A
+631 boss_flag_hide_hud
 632 ex_ins_repeat
 633 enemy_damage_ex
 634 enemy_hitbox_ex
@@ -312,8 +312,8 @@
 802 boss_callback
 
 ## Section H
-901 __debug_unknown_C
-902 __debug_unknown_D
+901 __debug_skip_start
+902 __debug_skip_stop
 
 ## Section I
 1001 __globals_flag_unknown_A
@@ -558,7 +558,7 @@
 -9991 PLAYER_X
 -9990 PLAYER_Y
 -9989 PLAYER_ANGLE
--9988 BOSS_TIMER
+-9988 PHASE_TIMER
 -9987 RAND_FLOAT_SIGNED
 -9986 SPELL_TIMEOUT
 -9985 EI0
@@ -638,16 +638,16 @@
 -9910 BOSS0_SPEED_ABS
 -9909 PARENT_ENEMY_ID
 -9908 ENEMY_COUNT_KILLABLE
--9907 SPELL_ID
+-9907 SPELL_PRACTICE_ID
 -9906 SELF_MIRROR
 -9905 CHAPTER
 -9904 PLAYER_DEATHS_GLOBAL
 #-9903
--9902 __BULLET_MANAGER_UNKNOWN_B
+-9902 __GRAZE_RECENT
 #-9901
 #-9900
 -9899 ACHIEVEMENT_MODE
--9898 __BULLET_COUNT_UNKNOWN_A
+-9898 BULLET_COUNT
 
 -1 STACK_TOP
 0 LOCAL_A

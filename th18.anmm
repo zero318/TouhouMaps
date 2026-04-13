@@ -134,7 +134,7 @@
 505 anm_create_child_back_rel
 506 anm_create_back_rel
 507 __anm_flag_use_root_vm_slowdown
-508 effect_create
+508 effect_create_special
 509 copy_parent_context
 
 ## Section G
